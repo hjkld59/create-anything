@@ -15,31 +15,29 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700&family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#F8F6FB;
+  --paper:#FAF6F1;
   --paper-raised:#FFFFFF;
-  --ink:#2A2440;
-  --ink-soft:#5C5470;
-  --ink-faint:#767088;
-  --line:#E3DEEE;
-  --line-strong:#D0C6E8;
+  --ink:#37352F;
+  --ink-soft:#5B5347;
+  --ink-faint:#7C7368;
+  --line:#E4DBD0;
+  --line-strong:#D6C9BA;
 
-  --dusk:#4E4372;        /* primary — twilight violet */
-  --dusk-ink:#3A3258;
-  --dusk-soft:#EAE4F6;
+  --pink:#8C6660;        /* primary — Morandi 粉色 (text-safe) */
+  --pink-ink:#6E4D47;    /* hover/pressed shade */
+  --pink-deco:#C9938A;   /* decorative-only, no text use */
+  --pink-soft:#F3E1DC;
 
-  --rose:#A6635B;        /* secondary — dawn rose (text-safe) */
-  --rose-deco:#C9948C;   /* decorative-only, no text use */
-  --rose-soft:#F5E3DE;
+  --blue:#5B7481;        /* secondary — Morandi 藍色 (text-safe) */
+  --blue-deco:#7A9BAD;
+  --blue-soft:#E3EDF3;
 
-  --gold:#8E6A34;        /* tertiary — sunset gold (text-safe) */
-  --gold-deco:#CBA968;
-  --gold-soft:#F1E6CE;
+  --latte:#897352;       /* tertiary — Morandi 奶茶色 (text-safe) */
+  --latte-deco:#C4A576;
+  --latte-soft:#F3EAD9;
 
-  --night:#3E4E74;       /* info — night sky blue */
-  --night-soft:#E2E6F2;
-
-  --sage:#4F6B58;        /* affirmative — muted sage */
-  --sage-soft:#E4EDE6;
+  --sage:#5E7A66;        /* utility — pairs with LINE brand green, and "good fit" signal */
+  --sage-soft:#E8F0E8;
 
   --success:#4F7A5D;
   --danger:#AD4F49;
@@ -59,11 +57,11 @@ h1,h2,h3,.serif{font-family:'Noto Serif TC','Noto Sans TC',serif;}
 p{line-height:1.9;margin-bottom:14px;max-width:34em;}
 p:last-child{margin-bottom:0;}
 strong{color:inherit;font-weight:700;}
-em.mark{font-style:normal;color:var(--rose);}
+em.mark{font-style:normal;color:var(--pink);}
 
-::selection{background:var(--dusk-soft);color:var(--dusk-ink);}
+::selection{background:var(--pink-soft);color:var(--pink);}
 a{color:inherit;}
-:focus-visible{outline:2px solid var(--dusk);outline-offset:3px;}
+:focus-visible{outline:2px solid var(--pink);outline-offset:3px;}
 
 /* ===== Hero ===== */
 .hero-wrap{background:var(--paper-raised);padding:36px 20px 0;}
@@ -73,9 +71,9 @@ a{color:inherit;}
   max-width:640px;margin:-46px auto 0;position:relative;background:var(--paper-raised);
   border-radius:20px;box-shadow:0 20px 46px -24px rgba(42,36,64,.4);padding:30px 28px 34px;text-align:center;
 }
-.hero-eyebrow{display:inline-flex;align-items:center;gap:7px;background:var(--dusk-soft);color:var(--dusk-ink);font-size:12px;font-weight:700;letter-spacing:.03em;padding:6px 15px;border-radius:20px;margin-bottom:18px;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:7px;background:var(--pink-soft);color:var(--pink-ink);font-size:12px;font-weight:700;letter-spacing:.03em;padding:6px 15px;border-radius:20px;margin-bottom:18px;}
 .hero-title{font-size:clamp(24px,4.4vw,30px);font-weight:700;line-height:1.5;color:var(--ink);margin-bottom:14px;text-wrap:balance;}
-.hero-title .accent{color:var(--rose);}
+.hero-title .accent{color:var(--pink);}
 .hero-tagline{font-family:'Noto Sans TC',sans-serif;font-size:14.5px;color:var(--ink-soft);line-height:1.85;max-width:30em;margin:0 auto 20px;}
 .hero-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;}
 .hero-tag{background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);font-size:11.5px;font-weight:600;padding:5px 13px;border-radius:20px;}
@@ -86,7 +84,7 @@ a{color:inherit;}
 /* ===== Section rhythm ===== */
 .divider{display:flex;align-items:center;gap:14px;margin:44px 0;color:var(--line-strong);}
 .divider::before,.divider::after{content:'';flex:1;height:1px;background:var(--line);}
-.divider .star{font-size:13px;color:var(--rose-deco);}
+.divider .star{font-size:13px;color:var(--pink-deco);}
 
 .eyebrow{font-family:'Noto Sans TC',sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:8px;}
 h2.section-title{font-size:20px;font-weight:700;color:var(--ink);line-height:1.5;margin-bottom:8px;text-wrap:balance;}
@@ -94,7 +92,7 @@ h2.section-title{font-size:20px;font-weight:700;color:var(--ink);line-height:1.5
 
 /* ===== Pull quote (personal story beats) ===== */
 .pull{
-  border-left:3px solid var(--rose-deco);padding:2px 0 2px 20px;margin:20px 0;
+  border-left:3px solid var(--pink-deco);padding:2px 0 2px 20px;margin:20px 0;
 }
 .pull p{font-family:'Noto Serif TC',serif;font-size:16.5px;line-height:1.85;color:var(--ink);font-weight:500;max-width:none;}
 
@@ -102,7 +100,7 @@ h2.section-title{font-size:20px;font-weight:700;color:var(--ink);line-height:1.5
 .pain-list{list-style:none;margin:16px 0;}
 .pain-list li{position:relative;padding:9px 0 9px 22px;font-size:14px;color:var(--ink-soft);line-height:1.85;border-bottom:1px solid var(--line);}
 .pain-list li:last-child{border-bottom:none;}
-.pain-list li::before{content:'—';position:absolute;left:0;color:var(--rose-deco);}
+.pain-list li::before{content:'—';position:absolute;left:0;color:var(--pink-deco);}
 
 /* ===== opening statement card ===== */
 .opener{background:var(--paper-raised);border:1px solid var(--line);border-radius:20px;padding:28px 26px;box-shadow:0 2px 18px -8px rgba(42,36,64,.14);}
@@ -113,31 +111,31 @@ h2.section-title{font-size:20px;font-weight:700;color:var(--ink);line-height:1.5
 /* ===== CREATE IT → SHIP IT ===== */
 .ship-row{display:flex;align-items:center;justify-content:center;gap:12px;margin:22px 0 8px;}
 .ship-badge{font-family:'Noto Sans TC',sans-serif;font-size:12px;font-weight:700;letter-spacing:.06em;padding:9px 18px;border-radius:20px;background:var(--paper);border:1px solid var(--line-strong);color:var(--ink-faint);}
-.ship-badge.active{background:var(--dusk);border-color:var(--dusk);color:#fff;}
-.ship-arrow{font-size:16px;color:var(--rose-deco);}
+.ship-badge.active{background:var(--pink);border-color:var(--pink);color:#fff;}
+.ship-arrow{font-size:16px;color:var(--pink-deco);}
 .ship-caption{text-align:center;font-size:13px;color:var(--ink-faint);}
 
 /* ===== 內容卡片夾 ===== */
 .panel{border-radius:20px;padding:28px 26px;margin:10px 0 6px;}
 .panel h2.section-title{margin-bottom:10px;}
 .panel .section-sub{color:var(--ink-soft);}
-.panel.dusk{background:var(--dusk-soft);}
-.panel.rose{background:var(--rose-soft);}
-.panel.gold{background:var(--gold-soft);}
-.panel.night{background:var(--night-soft);}
-.panel.sage{background:var(--sage-soft);}
+.panel.blue{background:var(--blue-soft);}
+.panel.pink{background:var(--pink-soft);}
+.panel.latte{background:var(--latte-soft);}
+
+
 
 /* ===== 自我介紹 ===== */
 .intro-card{background:var(--paper-raised);border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:0 2px 18px -8px rgba(42,36,64,.14);}
 .intro-top{display:flex;gap:15px;align-items:center;margin-bottom:18px;}
-.intro-photo{width:66px;height:66px;border-radius:50%;flex-shrink:0;overflow:hidden;border:2px solid var(--rose-deco);}
+.intro-photo{width:66px;height:66px;border-radius:50%;flex-shrink:0;overflow:hidden;border:2px solid var(--pink-deco);}
 .intro-photo img{width:100%;height:100%;object-fit:cover;display:block;}
 .intro-name{font-family:'Noto Serif TC',serif;font-size:16.5px;font-weight:700;color:var(--ink);}
 .intro-role{font-size:12px;color:var(--ink-faint);margin-top:2px;}
 .intro-text p{font-family:'Noto Serif TC',serif;font-size:14.5px;color:var(--ink-soft);line-height:1.95;max-width:none;}
 
-.stat-highlight{background:linear-gradient(155deg,var(--rose-soft) 0%,var(--gold-soft) 100%);border-radius:16px;padding:22px;text-align:center;margin:18px 0;}
-.stat-highlight .n{font-family:'Noto Serif TC',serif;font-size:25px;font-weight:700;color:var(--rose);font-variant-numeric:tabular-nums;}
+.stat-highlight{background:linear-gradient(155deg,var(--blue-soft) 0%,var(--latte-soft) 100%);border-radius:16px;padding:22px;text-align:center;margin:18px 0;}
+.stat-highlight .n{font-family:'Noto Serif TC',serif;font-size:25px;font-weight:700;color:var(--pink);font-variant-numeric:tabular-nums;}
 .stat-highlight .l{font-size:12px;color:var(--ink-soft);margin-top:6px;}
 
 .proof-shot{margin:14px 0;border-radius:14px;overflow:hidden;border:1px solid var(--line);}
@@ -155,14 +153,14 @@ h2.section-title{font-size:20px;font-weight:700;color:var(--ink);line-height:1.5
 .callout-icon{font-size:18px;flex-shrink:0;margin-top:1px;}
 .callout-text{font-size:14px;color:var(--ink);}
 .callout-text p{margin-bottom:6px;max-width:none;}
-.callout.night{background:var(--night-soft);border-color:transparent;}
-.callout.rose{background:var(--rose-soft);border-color:transparent;}
+.callout.blue{background:var(--blue-soft);border-color:transparent;}
+.callout.pink{background:var(--pink-soft);border-color:transparent;}
 
 /* ===== 任務清單（真正的序列，用序號有意義） ===== */
 .task-acc{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--paper-raised);margin-bottom:10px;}
 .task-acc summary{list-style:none;cursor:pointer;padding:16px 20px;display:flex;align-items:center;gap:14px;}
 .task-acc summary::-webkit-details-marker{display:none;}
-.task-acc .t-num{font-family:'Noto Serif TC',serif;font-size:20px;font-weight:700;color:var(--rose-deco);flex-shrink:0;width:34px;font-variant-numeric:tabular-nums;}
+.task-acc .t-num{font-family:'Noto Serif TC',serif;font-size:20px;font-weight:700;color:var(--pink-deco);flex-shrink:0;width:34px;font-variant-numeric:tabular-nums;}
 .task-acc .t-name{font-size:14.5px;font-weight:700;color:var(--ink);flex:1;}
 .task-acc .t-icon{font-size:16px;color:var(--ink-faint);flex-shrink:0;transition:transform .2s;}
 .task-acc[open] .t-icon{transform:rotate(45deg);}
@@ -184,15 +182,15 @@ h2.section-title{font-size:20px;font-weight:700;color:var(--ink);line-height:1.5
 .timeline{display:flex;flex-direction:column;}
 .tl-row{display:flex;gap:18px;padding:20px 0;border-bottom:1px solid var(--line);}
 .tl-row:last-child{border:none;}
-.tl-day{font-family:'Noto Serif TC',serif;font-size:13px;font-weight:700;color:var(--dusk);width:78px;flex-shrink:0;padding-top:2px;}
+.tl-day{font-family:'Noto Serif TC',serif;font-size:13px;font-weight:700;color:var(--pink);width:78px;flex-shrink:0;padding-top:2px;}
 .tl-body{flex:1;font-size:14px;color:var(--ink);line-height:1.85;}
 .tl-body b{font-family:'Noto Serif TC',serif;display:block;margin-bottom:6px;font-size:15px;}
 .tl-body p{display:block;color:var(--ink-soft);font-size:13.5px;margin-bottom:6px;max-width:none;}
 
-.gate-note{background:var(--night-soft);border-radius:14px;padding:16px 18px;font-size:13px;color:var(--night);line-height:1.9;margin-top:16px;}
+.gate-note{background:var(--blue-soft);border-radius:14px;padding:16px 18px;font-size:13px;color:var(--blue);line-height:1.9;margin-top:16px;}
 
 /* ===== AI 助教 ===== */
-.ai-card{background:linear-gradient(150deg,var(--dusk-soft) 0%,var(--rose-soft) 100%);border-radius:20px;padding:26px 24px;}
+.ai-card{background:linear-gradient(150deg,var(--pink-soft) 0%,var(--blue-soft) 100%);border-radius:20px;padding:26px 24px;}
 .ai-card-top{display:flex;align-items:center;gap:13px;margin-bottom:16px;}
 .ai-avatar{width:50px;height:50px;border-radius:50%;background:var(--paper-raised);display:flex;align-items:center;justify-content:center;font-size:23px;flex-shrink:0;}
 .ai-card h4{font-family:'Noto Serif TC',serif;font-size:17px;font-weight:700;color:var(--ink);}
@@ -203,12 +201,12 @@ h2.section-title{font-size:20px;font-weight:700;color:var(--ink);line-height:1.5
 .chat-preview{border-radius:16px;border:1px solid var(--line);background:var(--paper-raised);padding:18px;display:flex;flex-direction:column;gap:11px;margin-top:14px;}
 .chat-row{display:flex;gap:9px;max-width:88%;align-items:flex-end;}
 .chat-row.user{align-self:flex-end;flex-direction:row-reverse;}
-.chat-avatar{width:26px;height:26px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:12px;background:var(--dusk-soft);}
+.chat-avatar{width:26px;height:26px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:12px;background:var(--pink-soft);}
 .chat-row.user .chat-avatar{background:var(--paper);color:var(--ink-faint);}
 .chat-bubble{border-radius:15px;padding:10px 14px;font-size:13px;line-height:1.75;}
 .chat-row.user .chat-bubble{background:var(--paper);color:var(--ink);border-bottom-right-radius:4px;}
-.chat-row.ai .chat-bubble{background:var(--dusk-soft);color:var(--dusk-ink);border-bottom-left-radius:4px;}
-.chat-row.ai.serious .chat-bubble{background:var(--rose-soft);color:var(--rose);}
+.chat-row.ai .chat-bubble{background:var(--pink-soft);color:var(--pink);border-bottom-left-radius:4px;}
+.chat-row.ai.serious .chat-bubble{background:var(--blue-soft);color:var(--blue);}
 .chat-caption{font-size:11.5px;color:var(--ink-faint);line-height:1.8;margin-top:10px;}
 
 /* ===== Notion 小預覽 ===== */
@@ -221,20 +219,20 @@ h2.section-title{font-size:20px;font-weight:700;color:var(--ink);line-height:1.5
 .np-item{display:flex;gap:10px;align-items:center;font-size:13px;color:var(--ink-soft);padding:8px 0;border-bottom:1px solid var(--line);}
 .np-box{width:14px;height:14px;border-radius:4px;border:1.5px solid var(--line-strong);flex-shrink:0;}
 .np-fade{height:112px;margin-top:-2px;background:linear-gradient(to bottom, rgba(255,255,255,0) 0%, var(--paper-raised) 80%);display:flex;align-items:flex-end;justify-content:center;padding-bottom:16px;}
-.np-lock{background:var(--paper);border:1px solid var(--line-strong);border-radius:20px;padding:6px 15px;font-size:11.5px;color:var(--rose);font-weight:700;}
+.np-lock{background:var(--paper);border:1px solid var(--line-strong);border-radius:20px;padding:6px 15px;font-size:11.5px;color:var(--blue);font-weight:700;}
 
 /* ===== 學員作品 ===== */
 .works-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:16px;}
 @media(max-width:480px){.works-grid{grid-template-columns:1fr;}}
 .work-shot{border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--paper-raised);}
 .work-shot img{width:100%;display:block;}
-.works-link{display:block;text-align:center;font-size:13px;color:var(--rose);font-weight:600;text-decoration:none;border:1.5px solid var(--rose-deco);border-radius:12px;padding:11px;}
+.works-link{display:block;text-align:center;font-size:13px;color:var(--pink);font-weight:600;text-decoration:none;border:1.5px solid var(--pink-deco);border-radius:12px;padding:11px;}
 
 /* ===== 價格 ===== */
 .price-card{background:var(--paper-raised);border:1.5px solid var(--line-strong);border-radius:22px;padding:30px 26px;text-align:center;box-shadow:0 20px 46px -26px rgba(42,36,64,.4);}
 .price-old{font-size:14px;color:var(--ink-faint);text-decoration:line-through;margin-bottom:2px;}
-.price-tag{font-family:'Noto Serif TC',serif;font-size:38px;font-weight:700;color:var(--rose);font-variant-numeric:tabular-nums;}
-.price-badge{display:inline-block;background:var(--dusk-soft);color:var(--dusk-ink);font-size:11.5px;font-weight:700;padding:4px 13px;border-radius:20px;margin:10px 0 4px;}
+.price-tag{font-family:'Noto Serif TC',serif;font-size:38px;font-weight:700;color:var(--pink);font-variant-numeric:tabular-nums;}
+.price-badge{display:inline-block;background:var(--pink-soft);color:var(--pink-ink);font-size:11.5px;font-weight:700;padding:4px 13px;border-radius:20px;margin:10px 0 4px;}
 .price-note{font-size:12px;color:var(--ink-faint);margin:6px 0 20px;}
 .price-includes{text-align:left;font-size:13.5px;color:var(--ink-soft);line-height:2.2;margin-bottom:22px;}
 .price-includes li{list-style:none;padding-left:24px;position:relative;}
@@ -242,8 +240,8 @@ h2.section-title{font-size:20px;font-weight:700;color:var(--ink);line-height:1.5
 
 .action-btn{width:100%;padding:15px 20px;border-radius:12px;border:none;cursor:pointer;font-size:14.5px;font-family:inherit;font-weight:600;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;}
 .action-btn.disabled{cursor:default;}
-.btn-primary{background:var(--dusk);color:#fff;}
-.btn-primary:hover{background:var(--dusk-ink);}
+.btn-primary{background:var(--pink);color:#fff;}
+.btn-primary:hover{background:var(--pink-ink);}
 .btn-primary.disabled{background:var(--line);color:var(--ink-faint);cursor:default;pointer-events:none;}
 
 .line-note{background:var(--sage-soft);border-radius:14px;padding:18px;margin-top:18px;text-align:center;}
@@ -263,7 +261,7 @@ h2.section-title{font-size:20px;font-weight:700;color:var(--ink);line-height:1.5
 .fit-card.no li{padding-left:19px;position:relative;}
 .fit-card.no li::before{content:'✕';position:absolute;left:0;color:var(--danger);font-weight:700;}
 
-.closing-card{background:linear-gradient(160deg,var(--dusk-soft) 0%,var(--rose-soft) 100%);border-radius:22px;padding:32px 28px;}
+.closing-card{background:linear-gradient(160deg,var(--pink-soft) 0%,var(--blue-soft) 100%);border-radius:22px;padding:32px 28px;}
 .closing-card p{font-family:'Noto Serif TC',serif;font-size:14.5px;color:var(--ink);text-align:center;line-height:1.95;max-width:none;}
 
 /* ===== FAQ／法務 ===== */
@@ -275,7 +273,7 @@ h2.section-title{font-size:20px;font-weight:700;color:var(--ink);line-height:1.5
 .accordion{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--paper-raised);margin-bottom:10px;}
 .accordion summary{list-style:none;cursor:pointer;padding:16px 20px;font-size:14px;font-weight:700;color:var(--ink);display:flex;align-items:center;justify-content:space-between;gap:10px;}
 .accordion summary::-webkit-details-marker{display:none;}
-.accordion summary::after{content:'+';font-size:19px;color:var(--rose);font-weight:400;flex-shrink:0;}
+.accordion summary::after{content:'+';font-size:19px;color:var(--pink);font-weight:400;flex-shrink:0;}
 .accordion[open] summary::after{content:'−';}
 .accordion .acc-body{padding:0 20px 20px;font-size:13px;color:var(--ink-soft);}
 .accordion .acc-body p{margin-bottom:10px;max-width:none;}
@@ -290,11 +288,11 @@ h2.section-title{font-size:20px;font-weight:700;color:var(--ink);line-height:1.5
 .not-promise li{padding-left:15px;position:relative;break-inside:avoid;}
 .not-promise li::before{content:'—';position:absolute;left:0;color:var(--danger);}
 
-.disclaimer{background:var(--night-soft);border-left:3px solid var(--night);border-radius:0 12px 12px 0;padding:16px 18px;font-size:12.5px;color:var(--ink-soft);}
+.disclaimer{background:var(--blue-soft);border-left:3px solid var(--blue);border-radius:0 12px 12px 0;padding:16px 18px;font-size:12.5px;color:var(--ink-soft);}
 .disclaimer p{margin-bottom:6px;max-width:none;}
-.disclaimer strong{color:var(--night);}
+.disclaimer strong{color:var(--blue);}
 
-.footer-card{background:var(--dusk);border-radius:20px;padding:30px 24px;text-align:center;}
+.footer-card{background:var(--pink);border-radius:20px;padding:30px 24px;text-align:center;}
 .footer-card h3{font-family:'Noto Serif TC',serif;font-size:17px;font-weight:700;color:#fff;margin-bottom:10px;}
 .footer-card p{color:rgba(255,255,255,.82);font-size:13.5px;margin-bottom:18px;max-width:none;}
 .footer-ig{display:inline-block;background:rgba(255,255,255,.16);color:#fff;font-size:13.5px;padding:10px 24px;border-radius:20px;text-decoration:none;border:1px solid rgba(255,255,255,.3);}
@@ -342,7 +340,7 @@ h2.section-title{font-size:20px;font-weight:700;color:var(--ink);line-height:1.5
 
   <div class="divider"><span class="star">✦</span></div>
 
-  <div class="panel dusk">
+  <div class="panel blue">
     <h2 class="section-title">安安設計的 888🪐AI引導包教你「創造」👾</h2>
     <p>《萬物皆可創》NT$888🪐AI引導包的任務很單純：<br>幫你把腦袋裡的想法，做出第一個可以操作的產品原型。</p>
     <p>而這堂《AI 產品上線陪跑計畫》解決的是下一個問題：<br>怎麼把一個 AI 做出的原型，完成為一個有公開網址、核心功能可以正常操作、資料保存方式清楚、經過真人測試，並具備基本交付條件的產品？</p>
@@ -367,7 +365,7 @@ h2.section-title{font-size:20px;font-weight:700;color:var(--ink);line-height:1.5
     <li>Claude 或 Codex 幫你修改一個功能，結果另外幾個地方一起壞掉</li>
     <li>你看著滿滿的程式碼，根本不知道現在這一版到底適不適合交出去</li>
   </ul>
-  <div class="callout night">
+  <div class="callout blue">
     <span class="callout-icon">💭</span>
     <div class="callout-text">
       <p>你真正卡住的可能不是：</p>
@@ -380,7 +378,7 @@ h2.section-title{font-size:20px;font-weight:700;color:var(--ink);line-height:1.5
 
   <div class="divider"><span class="star">✦</span></div>
 
-  <div class="panel sage">
+  <div class="panel latte">
     <h2 class="section-title">我不想教你成為工程師</h2>
     <p>先講清楚。<br>這不是工程師養成班。<br>我不會要求你背程式語法，不會要你學完整 JavaScript，不會把你訓練成全端工程師，也不會故意用一堆你聽不懂的專業名詞，讓課程看起來很厲害。</p>
     <p>我真正想教你的能力是：<br>怎麼帶著 AI，把一個想法完成到「可以公開交付」。</p>
@@ -451,7 +449,7 @@ h2.section-title{font-size:20px;font-weight:700;color:var(--ink);line-height:1.5
 
   <div class="divider"><span class="star">✦</span></div>
 
-  <div class="panel rose">
+  <div class="panel pink">
     <h2 class="section-title">💭 所以這一次，我想再往前走一步</h2>
     <p>888🪐AI引導包已經讓很多完全不會寫程式的人，把自己的想法做出了第一版。<br>但當越來越多人完成原型之後，新的問題也全部出現了：</p>
     <ul class="pain-list">
@@ -465,7 +463,7 @@ h2.section-title{font-size:20px;font-weight:700;color:var(--ink);line-height:1.5
       <li>「我怎麼知道我的東西完成到可以交付的程度？」</li>
     </ul>
     <p>所以我重新把整條路完整走了一遍。<br>我想做的不是只求「可以跑」，而是「可以交付」。</p>
-    <p class="caption-note">這就是<strong style="color:var(--rose);">《萬物皆可創・AI 產品上線陪跑計畫🪐》</strong>。</p>
+    <p class="caption-note">這就是<strong style="color:var(--pink);">《萬物皆可創・AI 產品上線陪跑計畫🪐》</strong>。</p>
   </div>
 
   <div class="divider"><span class="star">✦</span></div>
@@ -526,7 +524,7 @@ h2.section-title{font-size:20px;font-weight:700;color:var(--ink);line-height:1.5
 
   <div class="divider"><span class="star">✦</span></div>
 
-  <div class="panel night">
+  <div class="panel blue">
     <h2 class="section-title">我可以承諾你的，是這些</h2>
     <p>我不會保證你 14 天賺多少錢，不會保證做完一定爆單，不會保證你的產品一定有人買，也不會承諾所有類型的產品，都可以在 14 天內適合公開商用。<br>因為這些事情，不是任何一堂負責任的課程可以替市場與技術環境保證的。</p>
     <p>但只要你的產品符合這一梯的入學範圍，而且你願意按照任務完成實作，我會提供完整的：<br>原型 → 規格 → 可恢復版本 → 核心流程 → 資料處理 → 部署 → 真人測試 → 基本上線檢查，整條路徑。</p>
@@ -535,7 +533,7 @@ h2.section-title{font-size:20px;font-weight:700;color:var(--ink);line-height:1.5
 
   <div class="divider"><span class="star">✦</span></div>
 
-  <div class="panel gold">
+  <div class="panel latte">
     <h2 class="section-title">✦ 而且我刻意不教你「全部」</h2>
     <p>因為你根本不需要全部。<br>這堂課不是要把你變成工程師，所以這一梯不深入教授：</p>
     <ul class="scope-list">
@@ -702,7 +700,7 @@ h2.section-title{font-size:20px;font-weight:700;color:var(--ink);line-height:1.5
 
   <div class="divider"><span class="star">✦</span></div>
 
-  <div class="callout rose">
+  <div class="callout pink">
     <span class="callout-icon">✦</span>
     <div class="callout-text">
       <p>你不是買我的 14 天時間。</p>
