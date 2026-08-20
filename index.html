@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>萬物皆可創｜AI 產品上線陪跑計畫</title>
+<meta name="description" content="萬物皆可創・AI 產品上線陪跑計畫 · 14 天把原型做成有公開網址、能真正交付的作品 · 創始早鳥 NT$19,800">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%AA%90%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:title" content="萬物皆可創｜AI 產品上線陪跑計畫">
+<meta property="og:description" content="14 天，把你已經做出的 AI 原型，完成為一個有公開網址、能真正交付的作品。創始早鳥 NT$19,800。">
+<meta property="og:image" content="https://hjkld59.github.io/create-anything/assets/logo-banner.jpg">
+<meta property="og:url" content="https://hjkld59.github.io/create-anything/">
+<meta name="twitter:card" content="summary_large_image">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700&family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F8F6FB;
+  --paper-raised:#FFFFFF;
+  --ink:#2A2440;
+  --ink-soft:#5C5470;
+  --ink-faint:#767088;
+  --line:#E3DEEE;
+  --line-strong:#D0C6E8;
+
+  --dusk:#4E4372;        /* primary — twilight violet */
+  --dusk-ink:#3A3258;
+  --dusk-soft:#EAE4F6;
+
+  --rose:#A6635B;        /* secondary — dawn rose (text-safe) */
+  --rose-deco:#C9948C;   /* decorative-only, no text use */
+  --rose-soft:#F5E3DE;
+
+  --gold:#8E6A34;        /* tertiary — sunset gold (text-safe) */
+  --gold-deco:#CBA968;
+  --gold-soft:#F1E6CE;
+
+  --night:#3E4E74;       /* info — night sky blue */
+  --night-soft:#E2E6F2;
+
+  --sage:#4F6B58;        /* affirmative — muted sage */
+  --sage-soft:#E4EDE6;
+
+  --success:#4F7A5D;
+  --danger:#AD4F49;
+  --danger-soft:#F7E7E5;
+  --white:#FFFFFF;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Noto Sans TC','Microsoft JhengHei',sans-serif;
+  background:var(--paper); color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} }
+
+h1,h2,h3,.serif{font-family:'Noto Serif TC','Noto Sans TC',serif;}
+p{line-height:1.9;margin-bottom:14px;max-width:34em;}
+p:last-child{margin-bottom:0;}
+strong{color:inherit;font-weight:700;}
+em.mark{font-style:normal;color:var(--rose);}
+
+::selection{background:var(--dusk-soft);color:var(--dusk-ink);}
+a{color:inherit;}
+:focus-visible{outline:2px solid var(--dusk);outline-offset:3px;}
+
+/* ===== Hero ===== */
+.hero-wrap{background:var(--paper-raised);padding:36px 20px 0;}
+.hero-shot{max-width:920px;margin:0 auto;border-radius:18px;overflow:hidden;box-shadow:0 18px 50px -20px rgba(42,36,64,.35);}
+.hero-shot img{width:100%;display:block;}
+.hero-card{
+  max-width:640px;margin:-46px auto 0;position:relative;background:var(--paper-raised);
+  border-radius:20px;box-shadow:0 20px 46px -24px rgba(42,36,64,.4);padding:30px 28px 34px;text-align:center;
+}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:7px;background:var(--dusk-soft);color:var(--dusk-ink);font-size:12px;font-weight:700;letter-spacing:.03em;padding:6px 15px;border-radius:20px;margin-bottom:18px;}
+.hero-title{font-size:clamp(24px,4.4vw,30px);font-weight:700;line-height:1.5;color:var(--ink);margin-bottom:14px;text-wrap:balance;}
+.hero-title .accent{color:var(--rose);}
+.hero-tagline{font-family:'Noto Sans TC',sans-serif;font-size:14.5px;color:var(--ink-soft);line-height:1.85;max-width:30em;margin:0 auto 20px;}
+.hero-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;}
+.hero-tag{background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);font-size:11.5px;font-weight:600;padding:5px 13px;border-radius:20px;}
+.hero-pad{height:56px;background:var(--paper-raised);}
+
+.main{max-width:640px;margin:0 auto;padding:8px 20px 90px;}
+
+/* ===== Section rhythm ===== */
+.divider{display:flex;align-items:center;gap:14px;margin:44px 0;color:var(--line-strong);}
+.divider::before,.divider::after{content:'';flex:1;height:1px;background:var(--line);}
+.divider .star{font-size:13px;color:var(--rose-deco);}
+
+.eyebrow{font-family:'Noto Sans TC',sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:8px;}
+h2.section-title{font-size:20px;font-weight:700;color:var(--ink);line-height:1.5;margin-bottom:8px;text-wrap:balance;}
+.section-sub{font-size:13.5px;color:var(--ink-faint);margin-bottom:18px;line-height:1.8;max-width:34em;}
+
+/* ===== Pull quote (personal story beats) ===== */
+.pull{
+  border-left:3px solid var(--rose-deco);padding:2px 0 2px 20px;margin:20px 0;
+}
+.pull p{font-family:'Noto Serif TC',serif;font-size:16.5px;line-height:1.85;color:var(--ink);font-weight:500;max-width:none;}
+
+/* ===== 痛點清單 ===== */
+.pain-list{list-style:none;margin:16px 0;}
+.pain-list li{position:relative;padding:9px 0 9px 22px;font-size:14px;color:var(--ink-soft);line-height:1.85;border-bottom:1px solid var(--line);}
+.pain-list li:last-child{border-bottom:none;}
+.pain-list li::before{content:'—';position:absolute;left:0;color:var(--rose-deco);}
+
+/* ===== opening statement card ===== */
+.opener{background:var(--paper-raised);border:1px solid var(--line);border-radius:20px;padding:28px 26px;box-shadow:0 2px 18px -8px rgba(42,36,64,.14);}
+.opener .lede{font-family:'Noto Serif TC',serif;font-size:15px;line-height:1.9;color:var(--ink-soft);}
+.opener .lede strong{font-family:'Noto Serif TC',serif;font-weight:700;color:var(--ink);}
+.opener .lede p{margin-bottom:10px;max-width:none;}
+
+/* ===== CREATE IT → SHIP IT ===== */
+.ship-row{display:flex;align-items:center;justify-content:center;gap:12px;margin:22px 0 8px;}
+.ship-badge{font-family:'Noto Sans TC',sans-serif;font-size:12px;font-weight:700;letter-spacing:.06em;padding:9px 18px;border-radius:20px;background:var(--paper);border:1px solid var(--line-strong);color:var(--ink-faint);}
+.ship-badge.active{background:var(--dusk);border-color:var(--dusk);color:#fff;}
+.ship-arrow{font-size:16px;color:var(--rose-deco);}
+.ship-caption{text-align:center;font-size:13px;color:var(--ink-faint);}
+
+/* ===== 內容卡片夾 ===== */
+.panel{border-radius:20px;padding:28px 26px;margin:10px 0 6px;}
+.panel h2.section-title{margin-bottom:10px;}
+.panel .section-sub{color:var(--ink-soft);}
+.panel.dusk{background:var(--dusk-soft);}
+.panel.rose{background:var(--rose-soft);}
+.panel.gold{background:var(--gold-soft);}
+.panel.night{background:var(--night-soft);}
+.panel.sage{background:var(--sage-soft);}
+
+/* ===== 自我介紹 ===== */
+.intro-card{background:var(--paper-raised);border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:0 2px 18px -8px rgba(42,36,64,.14);}
+.intro-top{display:flex;gap:15px;align-items:center;margin-bottom:18px;}
+.intro-photo{width:66px;height:66px;border-radius:50%;flex-shrink:0;overflow:hidden;border:2px solid var(--rose-deco);}
+.intro-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+.intro-name{font-family:'Noto Serif TC',serif;font-size:16.5px;font-weight:700;color:var(--ink);}
+.intro-role{font-size:12px;color:var(--ink-faint);margin-top:2px;}
+.intro-text p{font-family:'Noto Serif TC',serif;font-size:14.5px;color:var(--ink-soft);line-height:1.95;max-width:none;}
+
+.stat-highlight{background:linear-gradient(155deg,var(--rose-soft) 0%,var(--gold-soft) 100%);border-radius:16px;padding:22px;text-align:center;margin:18px 0;}
+.stat-highlight .n{font-family:'Noto Serif TC',serif;font-size:25px;font-weight:700;color:var(--rose);font-variant-numeric:tabular-nums;}
+.stat-highlight .l{font-size:12px;color:var(--ink-soft);margin-top:6px;}
+
+.proof-shot{margin:14px 0;border-radius:14px;overflow:hidden;border:1px solid var(--line);}
+.proof-shot img{width:100%;display:block;}
+.proof-shot .cap{font-size:11px;color:var(--ink-faint);padding:9px 13px;background:var(--paper-raised);}
+.proof-shot.small{width:230px;max-width:62%;margin-left:auto;margin-right:auto;}
+
+.caption-note{font-size:12.5px;color:var(--ink-faint);}
+
+.case-study{background:var(--paper-raised);border:1px solid var(--line);border-left:3px solid var(--sage);border-radius:4px 16px 16px 4px;padding:18px 20px;margin:16px 0;font-size:13px;color:var(--ink-soft);}
+.case-study b{font-family:'Noto Serif TC',serif;display:block;color:var(--ink);font-size:14px;margin-bottom:7px;}
+.case-study p{margin-bottom:6px;max-width:none;}
+
+.callout{background:var(--paper-raised);border:1px solid var(--line);border-radius:16px;padding:18px 20px;display:flex;gap:13px;margin:12px 0;}
+.callout-icon{font-size:18px;flex-shrink:0;margin-top:1px;}
+.callout-text{font-size:14px;color:var(--ink);}
+.callout-text p{margin-bottom:6px;max-width:none;}
+.callout.night{background:var(--night-soft);border-color:transparent;}
+.callout.rose{background:var(--rose-soft);border-color:transparent;}
+
+/* ===== 任務清單（真正的序列，用序號有意義） ===== */
+.task-acc{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--paper-raised);margin-bottom:10px;}
+.task-acc summary{list-style:none;cursor:pointer;padding:16px 20px;display:flex;align-items:center;gap:14px;}
+.task-acc summary::-webkit-details-marker{display:none;}
+.task-acc .t-num{font-family:'Noto Serif TC',serif;font-size:20px;font-weight:700;color:var(--rose-deco);flex-shrink:0;width:34px;font-variant-numeric:tabular-nums;}
+.task-acc .t-name{font-size:14.5px;font-weight:700;color:var(--ink);flex:1;}
+.task-acc .t-icon{font-size:16px;color:var(--ink-faint);flex-shrink:0;transition:transform .2s;}
+.task-acc[open] .t-icon{transform:rotate(45deg);}
+.task-acc .acc-body{padding:0 20px 20px 68px;font-size:13.5px;color:var(--ink-soft);}
+.task-acc .acc-body p{max-width:none;}
+
+/* ===== 帶走清單 ===== */
+.check-list{list-style:none;font-size:14px;color:var(--ink-soft);line-height:2.1;}
+.check-list li{padding-left:24px;position:relative;}
+.check-list li::before{content:'✓';position:absolute;left:0;color:var(--success);font-weight:700;}
+
+/* ===== 範圍排除清單 ===== */
+.scope-list{list-style:none;font-size:13px;color:var(--ink-soft);line-height:2.1;columns:2;column-gap:22px;}
+@media(max-width:480px){.scope-list{columns:1;}}
+.scope-list li{padding-left:15px;position:relative;break-inside:avoid;}
+.scope-list li::before{content:'—';position:absolute;left:0;color:var(--ink-faint);}
+
+/* ===== 陪跑時程 ===== */
+.timeline{display:flex;flex-direction:column;}
+.tl-row{display:flex;gap:18px;padding:20px 0;border-bottom:1px solid var(--line);}
+.tl-row:last-child{border:none;}
+.tl-day{font-family:'Noto Serif TC',serif;font-size:13px;font-weight:700;color:var(--dusk);width:78px;flex-shrink:0;padding-top:2px;}
+.tl-body{flex:1;font-size:14px;color:var(--ink);line-height:1.85;}
+.tl-body b{font-family:'Noto Serif TC',serif;display:block;margin-bottom:6px;font-size:15px;}
+.tl-body p{display:block;color:var(--ink-soft);font-size:13.5px;margin-bottom:6px;max-width:none;}
+
+.gate-note{background:var(--night-soft);border-radius:14px;padding:16px 18px;font-size:13px;color:var(--night);line-height:1.9;margin-top:16px;}
+
+/* ===== AI 助教 ===== */
+.ai-card{background:linear-gradient(150deg,var(--dusk-soft) 0%,var(--rose-soft) 100%);border-radius:20px;padding:26px 24px;}
+.ai-card-top{display:flex;align-items:center;gap:13px;margin-bottom:16px;}
+.ai-avatar{width:50px;height:50px;border-radius:50%;background:var(--paper-raised);display:flex;align-items:center;justify-content:center;font-size:23px;flex-shrink:0;}
+.ai-card h4{font-family:'Noto Serif TC',serif;font-size:17px;font-weight:700;color:var(--ink);}
+.ai-card .sub{font-size:11.5px;color:var(--ink-soft);margin-top:3px;}
+.ai-card-text{font-size:13.5px;color:var(--ink);}
+.ai-card-text p{margin-bottom:9px;max-width:none;}
+
+.chat-preview{border-radius:16px;border:1px solid var(--line);background:var(--paper-raised);padding:18px;display:flex;flex-direction:column;gap:11px;margin-top:14px;}
+.chat-row{display:flex;gap:9px;max-width:88%;align-items:flex-end;}
+.chat-row.user{align-self:flex-end;flex-direction:row-reverse;}
+.chat-avatar{width:26px;height:26px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:12px;background:var(--dusk-soft);}
+.chat-row.user .chat-avatar{background:var(--paper);color:var(--ink-faint);}
+.chat-bubble{border-radius:15px;padding:10px 14px;font-size:13px;line-height:1.75;}
+.chat-row.user .chat-bubble{background:var(--paper);color:var(--ink);border-bottom-right-radius:4px;}
+.chat-row.ai .chat-bubble{background:var(--dusk-soft);color:var(--dusk-ink);border-bottom-left-radius:4px;}
+.chat-row.ai.serious .chat-bubble{background:var(--rose-soft);color:var(--rose);}
+.chat-caption{font-size:11.5px;color:var(--ink-faint);line-height:1.8;margin-top:10px;}
+
+/* ===== Notion 小預覽 ===== */
+.notion-preview{border-radius:16px;border:1px solid var(--line);overflow:hidden;background:var(--paper-raised);}
+.np-bar{display:flex;align-items:center;gap:6px;padding:11px 16px;background:var(--paper);border-bottom:1px solid var(--line);}
+.np-dot{width:7px;height:7px;border-radius:50%;background:var(--line-strong);}
+.np-bar-label{margin-left:6px;font-size:11px;color:var(--ink-faint);}
+.np-body{padding:20px 20px 0;}
+.np-title{font-family:'Noto Serif TC',serif;font-size:15px;font-weight:700;color:var(--ink);margin-bottom:13px;}
+.np-item{display:flex;gap:10px;align-items:center;font-size:13px;color:var(--ink-soft);padding:8px 0;border-bottom:1px solid var(--line);}
+.np-box{width:14px;height:14px;border-radius:4px;border:1.5px solid var(--line-strong);flex-shrink:0;}
+.np-fade{height:112px;margin-top:-2px;background:linear-gradient(to bottom, rgba(255,255,255,0) 0%, var(--paper-raised) 80%);display:flex;align-items:flex-end;justify-content:center;padding-bottom:16px;}
+.np-lock{background:var(--paper);border:1px solid var(--line-strong);border-radius:20px;padding:6px 15px;font-size:11.5px;color:var(--rose);font-weight:700;}
+
+/* ===== 學員作品 ===== */
+.works-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:16px;}
+@media(max-width:480px){.works-grid{grid-template-columns:1fr;}}
+.work-shot{border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--paper-raised);}
+.work-shot img{width:100%;display:block;}
+.works-link{display:block;text-align:center;font-size:13px;color:var(--rose);font-weight:600;text-decoration:none;border:1.5px solid var(--rose-deco);border-radius:12px;padding:11px;}
+
+/* ===== 價格 ===== */
+.price-card{background:var(--paper-raised);border:1.5px solid var(--line-strong);border-radius:22px;padding:30px 26px;text-align:center;box-shadow:0 20px 46px -26px rgba(42,36,64,.4);}
+.price-old{font-size:14px;color:var(--ink-faint);text-decoration:line-through;margin-bottom:2px;}
+.price-tag{font-family:'Noto Serif TC',serif;font-size:38px;font-weight:700;color:var(--rose);font-variant-numeric:tabular-nums;}
+.price-badge{display:inline-block;background:var(--dusk-soft);color:var(--dusk-ink);font-size:11.5px;font-weight:700;padding:4px 13px;border-radius:20px;margin:10px 0 4px;}
+.price-note{font-size:12px;color:var(--ink-faint);margin:6px 0 20px;}
+.price-includes{text-align:left;font-size:13.5px;color:var(--ink-soft);line-height:2.2;margin-bottom:22px;}
+.price-includes li{list-style:none;padding-left:24px;position:relative;}
+.price-includes li::before{content:'✓';position:absolute;left:0;color:var(--success);font-weight:700;}
+
+.action-btn{width:100%;padding:15px 20px;border-radius:12px;border:none;cursor:pointer;font-size:14.5px;font-family:inherit;font-weight:600;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;}
+.action-btn.disabled{cursor:default;}
+.btn-primary{background:var(--dusk);color:#fff;}
+.btn-primary:hover{background:var(--dusk-ink);}
+.btn-primary.disabled{background:var(--line);color:var(--ink-faint);cursor:default;pointer-events:none;}
+
+.line-note{background:var(--sage-soft);border-radius:14px;padding:18px;margin-top:18px;text-align:center;}
+.line-note p{font-size:13px;color:var(--ink-soft);line-height:1.8;margin-bottom:13px;max-width:none;}
+.line-btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;width:100%;background:#06C755;color:#fff;font-size:14px;font-weight:600;padding:13px;border-radius:11px;text-decoration:none;transition:all .2s;}
+.line-btn:hover{background:#05a847;}
+
+/* ===== 適合／不適合 ===== */
+.fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px;}
+@media(max-width:520px){.fit-grid{grid-template-columns:1fr;}}
+.fit-card{border-radius:16px;padding:18px;border:1px solid var(--line);background:var(--paper-raised);border-top:3px solid var(--sage);}
+.fit-card.no{border-top-color:var(--danger);}
+.fit-card .ft-title{font-family:'Noto Serif TC',serif;font-weight:700;font-size:14px;margin-bottom:11px;}
+.fit-card ul{padding-left:0;list-style:none;font-size:13px;color:var(--ink-soft);line-height:2;}
+.fit-card.yes li{padding-left:19px;position:relative;}
+.fit-card.yes li::before{content:'✓';position:absolute;left:0;color:var(--success);font-weight:700;}
+.fit-card.no li{padding-left:19px;position:relative;}
+.fit-card.no li::before{content:'✕';position:absolute;left:0;color:var(--danger);font-weight:700;}
+
+.closing-card{background:linear-gradient(160deg,var(--dusk-soft) 0%,var(--rose-soft) 100%);border-radius:22px;padding:32px 28px;}
+.closing-card p{font-family:'Noto Serif TC',serif;font-size:14.5px;color:var(--ink);text-align:center;line-height:1.95;max-width:none;}
+
+/* ===== FAQ／法務 ===== */
+.faq-item{border-bottom:1px solid var(--line);padding:16px 0;}
+.faq-q{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:7px;}
+.faq-a{font-size:13px;color:var(--ink-soft);}
+.faq-a p{margin-bottom:5px;max-width:none;}
+
+.accordion{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--paper-raised);margin-bottom:10px;}
+.accordion summary{list-style:none;cursor:pointer;padding:16px 20px;font-size:14px;font-weight:700;color:var(--ink);display:flex;align-items:center;justify-content:space-between;gap:10px;}
+.accordion summary::-webkit-details-marker{display:none;}
+.accordion summary::after{content:'+';font-size:19px;color:var(--rose);font-weight:400;flex-shrink:0;}
+.accordion[open] summary::after{content:'−';}
+.accordion .acc-body{padding:0 20px 20px;font-size:13px;color:var(--ink-soft);}
+.accordion .acc-body p{margin-bottom:10px;max-width:none;}
+.accordion .acc-body ul{padding-left:18px;margin-bottom:10px;}
+.accordion .acc-body li{margin-bottom:6px;}
+.section-accordion summary{font-size:16px;}
+
+.not-promise{background:var(--danger-soft);border-radius:14px;padding:20px 22px;margin:18px 0;}
+.not-promise-title{font-size:12.5px;font-weight:700;color:var(--danger);margin-bottom:10px;letter-spacing:.02em;}
+.not-promise ul{list-style:none;font-size:13px;color:var(--ink-soft);line-height:2.2;columns:2;column-gap:20px;}
+@media(max-width:480px){.not-promise ul{columns:1;}}
+.not-promise li{padding-left:15px;position:relative;break-inside:avoid;}
+.not-promise li::before{content:'—';position:absolute;left:0;color:var(--danger);}
+
+.disclaimer{background:var(--night-soft);border-left:3px solid var(--night);border-radius:0 12px 12px 0;padding:16px 18px;font-size:12.5px;color:var(--ink-soft);}
+.disclaimer p{margin-bottom:6px;max-width:none;}
+.disclaimer strong{color:var(--night);}
+
+.footer-card{background:var(--dusk);border-radius:20px;padding:30px 24px;text-align:center;}
+.footer-card h3{font-family:'Noto Serif TC',serif;font-size:17px;font-weight:700;color:#fff;margin-bottom:10px;}
+.footer-card p{color:rgba(255,255,255,.82);font-size:13.5px;margin-bottom:18px;max-width:none;}
+.footer-ig{display:inline-block;background:rgba(255,255,255,.16);color:#fff;font-size:13.5px;padding:10px 24px;border-radius:20px;text-decoration:none;border:1px solid rgba(255,255,255,.3);}
+
+.page-footer{text-align:center;padding:36px 20px 24px;color:var(--ink-faint);font-size:11.5px;line-height:2;}
+</style>
+</head>
+<body>
+
+<div class="hero-wrap">
+  <div class="hero-shot"><img src="assets/logo-banner.jpg" alt="萬物皆可創・把想法做成產品"></div>
+  <div class="hero-card">
+    <div class="hero-eyebrow">🌙 創始早鳥 NT$19,800・正式售價 NT$24,800</div>
+    <h1 class="hero-title">萬物皆可創｜<span class="accent">AI 產品上線陪跑計畫</span> 🪐</h1>
+    <p class="hero-tagline">14 天，把你已經做出的 AI 原型，完成為一個有公開網址<br>能讓真實使用者操作<br>並具備開始對外提供或販售基本條件的輕量型數位產品。</p>
+    <div class="hero-tags">
+      <span class="hero-tag">✦ 不用工程師背景</span>
+      <span class="hero-tag">🌙 AI 助教全程陪跑</span>
+      <span class="hero-tag">🧭 14 天完成上線</span>
+    </div>
+  </div>
+</div>
+<div class="hero-pad"></div>
+
+<div class="main">
+
+  <div class="opener">
+    <div class="lede">
+      <p>你可能已經用 AI 做出一些很酷的東西了。</p>
+      <p>一個記帳系統｜一個工作台｜一個預約工具｜一個業績紀錄系統｜一個自己的網站 👾</p>
+      <p>甚至是一個你以前從來沒想過，自己也能做出來的產品。</p>
+      <p>但做到這裡之後，你可能也開始發現：</p>
+      <p><strong>「所以……我要怎麼真的把它拿出去給別人用？」</strong></p>
+    </div>
+  </div>
+  <ul class="pain-list">
+    <li>它現在可能還只存在你的電腦裡</li>
+    <li>換一台裝置，資料可能就不見了</li>
+    <li>你不知道怎麼把它變成一個公開網址</li>
+    <li>不知道資料到底存在瀏覽器、自己的裝置，還是雲端</li>
+    <li>不知道別人打開之後會發生什麼</li>
+    <li>更不知道 AI 幫你做出來的東西，目前究竟只是「能跑」，還是已經具備基本交付條件</li>
+  </ul>
+  <p class="caption-note">這就是我設計這堂陪跑的原因。</p>
+
+  <div class="divider"><span class="star">✦</span></div>
+
+  <div class="panel dusk">
+    <h2 class="section-title">安安設計的 888🪐AI引導包教你「創造」👾</h2>
+    <p>《萬物皆可創》NT$888🪐AI引導包的任務很單純：<br>幫你把腦袋裡的想法，做出第一個可以操作的產品原型。</p>
+    <p>而這堂《AI 產品上線陪跑計畫》解決的是下一個問題：<br>怎麼把一個 AI 做出的原型，完成為一個有公開網址、核心功能可以正常操作、資料保存方式清楚、經過真人測試，並具備基本交付條件的產品？</p>
+    <p>這不是同一堂課多加幾支影片，而是完全不同的第二階段。</p>
+    <div class="ship-row">
+      <span class="ship-badge">CREATE IT</span>
+      <span class="ship-arrow">→</span>
+      <span class="ship-badge active">SHIP IT.</span>
+    </div>
+    <p class="ship-caption">真正把它送出去。</p>
+  </div>
+
+  <div class="divider"><span class="star">✦</span></div>
+
+  <h2 class="section-title">🌙 也許你現在正卡在這裡</h2>
+  <ul class="pain-list">
+    <li>你已經做出產品，但不知道怎麼公開上線</li>
+    <li>你有一個 HTML，但現在只有自己可以打開</li>
+    <li>重新整理或換裝置後，你不知道資料為什麼不見了</li>
+    <li>你想給別人使用，卻不知道資料到底應該怎麼保存</li>
+    <li>你想把模板販售給不同買家，但不知道每一份產品的資料應該怎麼分開</li>
+    <li>Claude 或 Codex 幫你修改一個功能，結果另外幾個地方一起壞掉</li>
+    <li>你看著滿滿的程式碼，根本不知道現在這一版到底適不適合交出去</li>
+  </ul>
+  <div class="callout night">
+    <span class="callout-icon">💭</span>
+    <div class="callout-text">
+      <p>你真正卡住的可能不是：</p>
+      <p><strong>「我做不做得出來？」</strong></p>
+      <p>而是：</p>
+      <p><strong>「我現在做出來的這個東西，到底完成到哪裡了？」</strong></p>
+    </div>
+  </div>
+  <p class="caption-note">如果你正卡在這一步，這堂陪跑就是為這個階段設計的。</p>
+
+  <div class="divider"><span class="star">✦</span></div>
+
+  <div class="panel sage">
+    <h2 class="section-title">我不想教你成為工程師</h2>
+    <p>先講清楚。<br>這不是工程師養成班。<br>我不會要求你背程式語法，不會要你學完整 JavaScript，不會把你訓練成全端工程師，也不會故意用一堆你聽不懂的專業名詞，讓課程看起來很厲害。</p>
+    <p>我真正想教你的能力是：<br>怎麼帶著 AI，把一個想法完成到「可以公開交付」。</p>
+    <ul class="check-list" style="margin:16px 0;">
+      <li>怎麼說清楚自己要什麼</li>
+      <li>怎麼拆產品規格</li>
+      <li>怎麼判斷 AI 有沒有做偏</li>
+      <li>怎麼測試</li>
+      <li>怎麼確認資料存在什麼地方</li>
+      <li>怎麼把產品部署成公開網址</li>
+      <li>怎麼知道哪些東西不能直接公開</li>
+      <li>怎麼在 AI 改壞的時候回到正常版本</li>
+    </ul>
+    <p class="caption-note">以及最重要的：怎麼判斷「這個版本現在適不適合交給真實使用者」。</p>
+  </div>
+
+  <div class="divider"><span class="star">✦</span></div>
+
+  <h2 class="section-title">✦ 我是 Sabrina，也可以叫我安安 🪐</h2>
+  <div class="intro-card">
+    <div class="intro-top">
+      <div class="intro-photo"><img src="assets/sabrina-photo.jpg" alt="安安 Sabrina"></div>
+      <div>
+        <div class="intro-name">安安 Sabrina</div>
+        <div class="intro-role">萬物皆可創・創辦人</div>
+      </div>
+    </div>
+    <div class="intro-text">
+      <p>如果你追蹤我一段時間，應該知道我的人生不是一路順風走到這裡的。</p>
+      <p>過去兩年，我曾因為非常信任的人，被騙走接近千萬元 😭</p>
+    </div>
+  </div>
+
+  <div class="pull"><p>那一段時間，我的人生幾乎重新歸零 💔</p></div>
+
+  <div class="intro-text">
+    <p>我重新工作、重新經營網路、重新整理自己的收入，也一點一點面對原本留下來的財務壓力。</p>
+    <p>那段時間讓我開始一直思考一件事：如果有一天原本依賴的收入突然不存在了，我還剩下什麼？</p>
+    <p>所以我後來越來越在意的，不只是「怎麼努力工作」，而是：一個人能不能慢慢替自己建立更多選擇。不是靠運氣，而是靠自己真正擁有的能力。</p>
+  </div>
+
+  <p style="margin-top:22px;">後來，我開始研究 AI。<br>但我沒有只拿 AI 來寫文案，我開始問自己：</p>
+  <div class="pull"><p>如果我腦袋裡有一個想法，有沒有可能真的把它做成產品？</p></div>
+  <p>於是我開始自己做：<br>記帳系統、工作台、AI 工具、數位產品，各種以前對一個完全不會 Coding 的人來說，門檻非常高的東西。</p>
+  <p>後來，我把這整個思考與創作流程整理成《萬物皆可創》888🪐AI引導包。<br>原本只是一次公開實驗，結果這個實驗，開始長出連我自己都沒有預料到的結果。</p>
+
+  <div class="stat-highlight">
+    <div class="n">約 10 天・接近 NT$200,000</div>
+    <div class="l">我的第二個 AI 產品，實際銷售金額</div>
+  </div>
+  <div class="proof-shot small">
+    <img src="assets/proof-stats.png" alt="888🪐AI引導包後台實際交易紀錄截圖">
+    <div class="cap">後台實際交易紀錄截圖</div>
+  </div>
+  <p class="caption-note">整個過程我幾乎都公開紀錄在 IG：<strong>@__sabrina.an</strong><br>產品怎麼做、怎麼發布、每天實際產生多少訂單、價格怎麼調整、大家拿到之後又做出了什麼。<br>我沒有等全部成功之後，再回頭包裝成一個漂亮的故事，而是直接把整個實驗過程公開。</p>
+
+  <p style="margin-top:18px;">但真正讓我決定把這件事做成完整陪跑的，其實不是我自己的營收，而是：</p>
+  <div class="pull"><p>開始有人用我的方法，做出了自己的產品 😭</p></div>
+  <p>有人做自己的網站，有人做家庭收支系統，有人做點餐工具，有人做工作台，有人做美業專用的業績紀錄系統。</p>
+
+  <div class="case-study">
+    <b>一位做霧唇的學員</b>
+    <p>把自己多年累積的美業經驗整理成產品。</p>
+    <p>開賣第一天，賣出 4 份，產生超過 NT$5,000 的淨收入，而且後續仍持續有成交。</p>
+    <p style="color:var(--ink-faint);">這是她自己的產品、自己的客群與自己的執行成果，不代表每一個加入的人都會得到相同的收入結果。</p>
+  </div>
+  <p class="caption-note">但這件事讓我非常確定：<br>真正有價值的從來不是「複製安安做了什麼」，而是：你能不能把自己本來就擁有的經驗、專業與想法，真正變成一個屬於你的產品。</p>
+
+  <div class="divider"><span class="star">✦</span></div>
+
+  <div class="panel rose">
+    <h2 class="section-title">💭 所以這一次，我想再往前走一步</h2>
+    <p>888🪐AI引導包已經讓很多完全不會寫程式的人，把自己的想法做出了第一版。<br>但當越來越多人完成原型之後，新的問題也全部出現了：</p>
+    <ul class="pain-list">
+      <li>「我要怎麼公開上線？」</li>
+      <li>「為什麼資料重新整理之後不見了？」</li>
+      <li>「可以直接給別人使用嗎？」</li>
+      <li>「我要怎麼把網址分享出去？」</li>
+      <li>「如果我要販售很多份呢？」</li>
+      <li>「Claude 改壞了怎麼辦？」</li>
+      <li>「哪些東西不能公開？」</li>
+      <li>「我怎麼知道我的東西完成到可以交付的程度？」</li>
+    </ul>
+    <p>所以我重新把整條路完整走了一遍。<br>我想做的不是只求「可以跑」，而是「可以交付」。</p>
+    <p class="caption-note">這就是<strong style="color:var(--rose);">《萬物皆可創・AI 產品上線陪跑計畫🪐》</strong>。</p>
+  </div>
+
+  <div class="divider"><span class="star">✦</span></div>
+
+  <h2 class="section-title">🧩 14 天，你會完成什麼？</h2>
+  <div class="section-sub">不是 14 天一直坐著聽課。大部分的時間，你都會直接拿自己的產品實作。整個流程拆成 9 個真正需要完成的任務——點開看每個任務具體在做什麼。</div>
+
+  <details class="task-acc"><summary><span class="t-num">01</span><span class="t-name">原型健檢</span><span class="t-icon">＋</span></summary>
+    <div class="acc-body"><p>先確認你現在手上的產品到底做到哪裡。我們不會一進來就叫 AI 大改。你會重新測試：功能能不能正常操作、換瀏覽器會發生什麼、用無痕視窗打開會發生什麼、資料目前到底存在什麼地方。你現在手上的東西，究竟是 Demo、Prototype，還是已經接近可以交付的版本。</p></div>
+  </details>
+  <details class="task-acc"><summary><span class="t-num">02</span><span class="t-name">鎖定真正使用者</span><span class="t-icon">＋</span></summary>
+    <div class="acc-body"><p>這個產品究竟是自己使用、固定認識的人使用、公開分享，還是準備販售給不同買家？因為不同使用方式，後面的資料與交付方式可能完全不同。這一步沒有想清楚，後面很容易越做越亂 😩</p></div>
+  </details>
+  <details class="task-acc"><summary><span class="t-num">03</span><span class="t-name">做出可以驗收的產品規格 👾</span><span class="t-icon">＋</span></summary>
+    <div class="acc-body"><p>我們會把「我想做一個很厲害的 XX 系統」變成真正能檢查的內容：有哪些頁面、有哪些資料、有哪些功能、什麼可以新增／修改／刪除、刪除前需不需要確認、刪除後是否需要恢復機制、手機版應該怎麼使用。最後你會有一份可以拿來驗收 AI 產出的 Product Spec 🪐</p></div>
+  </details>
+  <details class="task-acc"><summary><span class="t-num">04</span><span class="t-name">建立可恢復版本</span><span class="t-icon">＋</span></summary>
+    <div class="acc-body"><p>在讓 AI 繼續大改之前，我們先建立一份真正可以恢復的版本。因為同一台電腦裡多複製一份，不等於完整的備份策略。你會學會：如果 Claude 或 Codex 把產品改壞，至少知道怎麼回到一個正常版本。</p></div>
+  </details>
+  <details class="task-acc"><summary><span class="t-num">05</span><span class="t-name">完成核心流程</span><span class="t-icon">＋</span></summary>
+    <div class="acc-body"><p>這一步不是一直加漂亮功能。而是確認：一個第一次使用的人，能不能從第一步一路把核心任務完成。我們先把「主要功能真的能用」做好，再考慮其他延伸。</p></div>
+  </details>
+  <details class="task-acc"><summary><span class="t-num">06</span><span class="t-name">把資料真正處理清楚</span><span class="t-icon">＋</span></summary>
+    <div class="acc-body"><p>這是很多 AI 原型最容易卡住的一步。我們不會直接丟十種資料庫讓你自己選，而是先理解：誰會使用？資料需不需要跨裝置？是不是固定的人一起使用？是不是一份產品交給一個買家自己使用？是不是不同買家需要各自獨立的資料空間？又或者你的產品其實根本不需要資料庫？我們會依照需求判斷，不是為了「看起來專業」而亂加技術。</p></div>
+  </details>
+  <details class="task-acc"><summary><span class="t-num">07</span><span class="t-name">正式部署</span><span class="t-icon">＋</span></summary>
+    <div class="acc-body"><p>你的產品會從 localhost、電腦裡的檔案，走到一個真正可以分享出去的公開網址。你也會理解最基本的：免費平台網址、自訂網域、公開用的 key、不能公開的管理用 secret、測試版本與正式版本、哪些資訊可以出現在前端、哪些東西不應該公開。這些不是要把你變工程師，只是你在把產品交出去之前，至少應該知道的基本邊界。</p></div>
+  </details>
+  <details class="task-acc"><summary><span class="t-num">08</span><span class="t-name">三位真人盲測</span><span class="t-icon">＋</span></summary>
+    <div class="acc-body"><p>不是你自己覺得很好用就算。你至少需要找三位不是你本人、不會寫程式，而且操作時你不能站在旁邊一直教他怎麼按的人，真的讓他們自己操作。如果三個人都不知道下一步去哪裡，那就代表流程還需要調整，不是使用者笨。</p></div>
+  </details>
+  <details class="task-acc"><summary><span class="t-num">09</span><span class="t-name">正式上線前檢查</span><span class="t-icon">＋</span></summary>
+    <div class="acc-body"><p>最後不是「網址打得開」就算完成。我們會一起確認：核心流程、資料保存方式、手機版、錯誤提示、刪除確認、公開與管理用金鑰、分享權限、備份、已知限制、可能產生的第三方費用、真人測試。完成本課程定義的基本上線與交付檢查後，才進入最後驗收。</p></div>
+  </details>
+
+  <div class="divider"><span class="star">✦</span></div>
+
+  <h2 class="section-title">🌙 你最後帶走的，不只是一堂課 🙈</h2>
+  <div class="section-sub">如果你完整走完 14 天任務，你應該會帶走：</div>
+  <ul class="check-list">
+    <li>一個真正屬於自己的 AI 產品</li>
+    <li>一份完整產品規格</li>
+    <li>一個可以公開分享的正式網址</li>
+    <li>一套符合自己產品情境的資料保存方式</li>
+    <li>一份存在自己主要工作裝置之外的備份</li>
+    <li>一個可以正常完成主要任務的核心流程</li>
+    <li>基本手機版體驗</li>
+    <li>基本錯誤提示與防呆</li>
+    <li>至少三位真人使用測試紀錄</li>
+    <li>一份完整的上線前檢查結果</li>
+    <li>一套 AI 改壞產品時可以恢復版本的基本方法</li>
+    <li>小安 AI 助教</li>
+    <li>14 天完整任務教材</li>
+    <li>固定真人陪跑與問題回覆時段</li>
+    <li>最終上線檢查與成果 Review</li>
+  </ul>
+  <p class="caption-note" style="margin-top:16px;">而更重要的是：下一次你再冒出一個新的產品想法，你不需要重新回到「我完全不知道下一步在哪裡」。你會開始理解，一個 AI 原型，是怎麼一步一步被完成到可以真正交出去的。</p>
+
+  <div class="divider"><span class="star">✦</span></div>
+
+  <div class="panel night">
+    <h2 class="section-title">我可以承諾你的，是這些</h2>
+    <p>我不會保證你 14 天賺多少錢，不會保證做完一定爆單，不會保證你的產品一定有人買，也不會承諾所有類型的產品，都可以在 14 天內適合公開商用。<br>因為這些事情，不是任何一堂負責任的課程可以替市場與技術環境保證的。</p>
+    <p>但只要你的產品符合這一梯的入學範圍，而且你願意按照任務完成實作，我會提供完整的：<br>原型 → 規格 → 可恢復版本 → 核心流程 → 資料處理 → 部署 → 真人測試 → 基本上線檢查，整條路徑。</p>
+    <p class="caption-note">你不需要自己把網路上幾百篇資訊拼在一起，也不需要每遇到一個問題就重新搜尋一次，更不用一個人對著 AI 猜：「它現在講的到底對不對？」</p>
+  </div>
+
+  <div class="divider"><span class="star">✦</span></div>
+
+  <div class="panel gold">
+    <h2 class="section-title">✦ 而且我刻意不教你「全部」</h2>
+    <p>因為你根本不需要全部。<br>這堂課不是要把你變成工程師，所以這一梯不深入教授：</p>
+    <ul class="scope-list">
+      <li>大型 SaaS 架構</li>
+      <li>企業級後台</li>
+      <li>複雜會員系統</li>
+      <li>多人多租戶架構</li>
+      <li>高風險權限系統</li>
+      <li>金流 API 串接</li>
+      <li>電子發票 API</li>
+      <li>企業級資安</li>
+      <li>大型資料庫架構</li>
+      <li>大量敏感資料處理</li>
+    </ul>
+    <p class="caption-note">這些東西全部塞給第一次做產品的人，不叫超值，只會讓你做不完。我真正要教的是：把一個符合本梯範圍的輕量型 AI 產品，做到具備開始公開提供或販售的基本條件。</p>
+  </div>
+
+  <div class="divider"><span class="star">✦</span></div>
+
+  <details class="accordion section-accordion">
+    <summary>⚠️ 這堂課不適合所有產品</summary>
+    <div class="acc-body">
+      <p style="color:var(--ink-faint);">因為我希望保護每一個人的完成率，也保護你真正要交出去的東西。所以正式加入前，會先通過原型入場檢查（Prototype Gate）。</p>
+      <p><strong>你需要：</strong><br>已經完成《萬物皆可創》888🪐AI引導包，或本來就已經有一個可以操作的 AI 產品原型（不需要完美，但至少要有一個可以實際操作的第一版）。<br>另外你需要有自己的電腦與穩定網路，14 天內願意安排時間實際操作，接受 Claude、主機、網域或其他第三方工具若產生費用，需要自行負擔。</p>
+      <p>而且這一梯的產品原則上不包含：</p>
+      <ul class="scope-list">
+        <li>複雜會員登入／多租戶系統</li>
+        <li>大量敏感客戶資料</li>
+        <li>醫療診斷型產品</li>
+        <li>金融投資決策型產品</li>
+        <li>高度受法規管理的資料與流程</li>
+        <li>大型企業內部系統</li>
+      </ul>
+      <p>如果你的產品屬於這些範圍，我會直接告訴你：這一梯不適合硬做。<br>有些產品需要真正的工程、資安或法律專業一起參與，知道什麼時候不該亂做，也是產品能力的一部分。</p>
+    </div>
+  </details>
+
+  <div class="footer-card" style="margin-top:18px;">
+    <h3>原型還沒完成？沒關係，不是拒絕你</h3>
+    <p>你可以先從《萬物皆可創》888🪐AI引導包開始，完成 CREATE IT。等第一版真的存在之後，再來走 SHIP IT——這樣 19,800 的時間，才不會拿來重新學 888🪐AI引導包已經可以完成的事情。</p>
+    <a class="footer-ig" href="https://hjkld59.github.io/ai-vidio/product-299/" target="_blank" rel="noopener">前往 888🪐AI引導包 →</a>
+  </div>
+
+  <div class="divider"><span class="star">✦</span></div>
+
+  <details class="accordion section-accordion">
+    <summary>🔒 我很在意一件很多 AI 新手最容易忽略的事情</summary>
+    <div class="acc-body">
+      <p>AI 很快，真的非常快。現在 Claude Code、Codex 可以在很短時間裡完成大量原本需要手動處理的工作。但——<strong>AI 做得出來，不代表這個版本就適合直接交出去。</strong></p>
+      <p style="color:var(--ink);">所以我們不只看畫面漂不漂亮，我們也會檢查：</p>
+      <ul class="check-list">
+        <li>資料到底存在什麼地方</li>
+        <li>不應公開的管理資訊有沒有暴露</li>
+        <li>產品分享出去之後，別人能看到或修改什麼</li>
+        <li>刪除有沒有基本防呆</li>
+        <li>AI 把產品改壞後能不能回復</li>
+        <li>公開分享的網址是不是正確版本</li>
+        <li>換裝置或重新整理後會發生什麼</li>
+        <li>真人第一次操作會不會卡住</li>
+      </ul>
+      <p style="margin-top:14px;">我們做的不是完整企業級安全審查，而是低風險、輕量型產品在公開交付前應有的基本檢查。如果產品涉及會員、多租戶、敏感個資或其他高風險架構，我也會直接告訴你：這已經超過這堂課讓新手自己完成並直接公開交付的範圍。真正負責任不是什麼都敢做，而是知道自己的邊界在哪裡。</p>
+    </div>
+  </details>
+
+  <div class="divider"><span class="star">✦</span></div>
+
+  <h2 class="section-title">🧩 陪跑方式｜不是把課丟給你，而是真的有人陪你把產品做完</h2>
+  <p>這堂課不是買完之後，丟一堆影片讓你自己慢慢研究唷！<br>也不是 24 小時隨時私訊、什麼問題都丟給我處理。</p>
+  <p>我設計的是一套：<br>有節奏、有回饋、有真人判斷，也保留你自己完成能力的陪跑方式。</p>
+  <p class="caption-note">因為我不希望你只是「因為安安陪你做完這一次」。我更希望你真的學會：下一次遇到問題，知道自己可以怎麼找答案、怎麼判斷、怎麼把產品繼續完成。</p>
+
+  <div class="timeline">
+    <div class="tl-row">
+      <div class="tl-day">Day 1</div>
+      <div class="tl-body">
+        <b>Kickoff 真人開場</b>
+        <p>第一天我們會一起確認：你現在手上的原型做到哪裡、哪些功能已經可以用、哪些地方目前只是「看起來能跑」、這個產品真正要給誰使用、14 天內應該完成到什麼程度、哪些功能這一梯先不要貪心做。</p>
+        <p>我會陪你完成最重要的第一步：先把方向鎖對。</p>
+        <p>因為產品最怕的不是做得慢，而是一開始方向做歪，後面花再多時間都只是在修錯的東西。</p>
+      </div>
+    </div>
+    <div class="tl-row">
+      <div class="tl-day">Day 3/6/9/12</div>
+      <div class="tl-body">
+        <b>固定卡關陪跑</b>
+        <p>你不需要為了一個問題卡兩三天，也不用一直猜 AI 到底講得對不對。</p>
+        <p>你可以把操作卡關、功能壞掉、產品流程不順、資料問題、部署問題、AI 修改後出錯、不知道下一步怎麼走，整理後提交，我會在固定時段集中處理。</p>
+        <p>這樣的設計不是因為我不想回訊息，而是我不希望這堂課變成：你每遇到一個問題，就只能等安安幫你解決。</p>
+        <p>真正有用的能力，是慢慢建立自己的判斷——我會陪你突破真正卡住的地方，但不會把整個產品直接替你完成，這樣以後你才有獨當一面的能力！</p>
+      </div>
+    </div>
+    <div class="tl-row">
+      <div class="tl-day">Day 14</div>
+      <div class="tl-body">
+        <b>真人 Final Review</b>
+        <p>完成最後檢查、確認目前版本完成度、成果發表。</p>
+        <p>符合本梯定義的基本上線與交付標準，就完成這一次陪跑。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"><span class="star">✦</span></div>
+
+  <h2 class="section-title">💭 中間卡住怎麼辦？小安助教</h2>
+  <div class="ai-card">
+    <div class="ai-card-top">
+      <div class="ai-avatar">🌙</div>
+      <div>
+        <h4>小安助教</h4>
+        <div class="sub">不是安安本人，是我根據整套流程設計出來的 AI 陪跑助手</div>
+      </div>
+    </div>
+    <div class="ai-card-text">
+      <p>它可以協助你：理解目前卡在哪一步、整理問題、處理一般操作問題、協助 Debug、把複雜問題拆小、整理可以交給 Claude 或 Codex 的指令。</p>
+      <p>但如果問題涉及產品是否超出範圍、重大架構判斷、敏感資料、法律／個資灰色地帶、最終上線判斷，小安不會自己替你下最後結論，它會把問題轉回真人判斷。</p>
+      <p style="font-weight:700;">AI 幫你加速，但重要判斷不全部外包給 AI。</p>
+    </div>
+    <div class="chat-preview">
+      <div class="chat-row ai">
+        <div class="chat-avatar">🌙</div>
+        <div class="chat-bubble">你已經想到重點了 ✦ 這一步很多人會漏掉——先跟我說說哪裡不一樣，我們一起看看是不是需要調整。</div>
+      </div>
+      <div class="chat-row user">
+        <div class="chat-avatar">你</div>
+        <div class="chat-bubble">我剛把原型放到另一個瀏覽器打開，畫面好像跟平常看到的不太一樣？</div>
+      </div>
+      <div class="chat-row user">
+        <div class="chat-avatar">你</div>
+        <div class="chat-bubble">那我乾脆做成大家都能自己登入帳號、看自己資料的系統，這樣比較像正式產品？</div>
+      </div>
+      <div class="chat-row ai serious">
+        <div class="chat-avatar">🌙</div>
+        <div class="chat-bubble">這個我要認真跟你說一下——這已經超出這堂課能保證教到的範圍了，不是我能幫你決定的事。決定權還是在你手上，先到卡關提問區把想法完整寫一次，安安會親自回你。</div>
+      </div>
+    </div>
+    <div class="chat-caption">💭 以上為對話情境示意，用來讓你先感受小安的語氣。</div>
+  </div>
+
+  <div class="divider"><span class="star">✦</span></div>
+
+  <h2 class="section-title">📓 課程內容長什麼樣子</h2>
+  <div class="section-sub">入學後你會在 Notion 看到完整 9 個任務的頁面，這裡只先讓你看一小部分。</div>
+  <div class="notion-preview">
+    <div class="np-bar"><span class="np-dot"></span><span class="np-dot"></span><span class="np-dot"></span><span class="np-bar-label">Notion · 萬物皆可創・AI 產品上線陪跑計畫</span></div>
+    <div class="np-body">
+      <div class="np-title">🗺️ 課程首頁</div>
+      <div class="np-item"><span class="np-box"></span>入學檢查 Prototype Gate</div>
+      <div class="np-item"><span class="np-box"></span>任務 1・原型健檢</div>
+      <div class="np-item"><span class="np-box"></span>任務 2・鎖定使用者</div>
+      <div class="np-fade"><span class="np-lock">🔒 完整 9 個任務內容，入學後於 Notion 開放</span></div>
+    </div>
+  </div>
+
+  <div class="divider"><span class="star">✦</span></div>
+
+  <h2 class="section-title">🎨 學員們創造的作品</h2>
+  <div class="section-sub">更多真實案例都在安安的 IG 精選動態。</div>
+  <div class="works-grid">
+    <div class="work-shot"><img src="assets/testimonial-chat-1.jpg" alt="學員作品與回饋 1"></div>
+    <div class="work-shot"><img src="assets/testimonial-chat-2.jpg" alt="學員作品與回饋 2"></div>
+    <div class="work-shot"><img src="assets/testimonial-story.jpg" alt="學員作品與回饋 3"></div>
+  </div>
+  <a class="works-link" href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MzUxMjkzNjgwMTcwOTI0?igsh=MXBhdDI2MHo2dm9paQ==&igsi=MXBhdDI2MHo2dm9paQ==" target="_blank" rel="noopener">📸 到 IG 精選動態看更多學員作品 →</a>
+
+  <div class="divider"><span class="star">✦</span></div>
+
+  <div class="callout rose">
+    <span class="callout-icon">✦</span>
+    <div class="callout-text">
+      <p>你不是買我的 14 天時間。</p>
+      <p>你買的是我已經替你整理過的路：每一步應該注意什麼、什麼時候應該停下來、什麼時候應該測試、什麼時候應該交給真人判斷，以及你原本可能要自己查很多天、踩很多次錯，才會慢慢拼起來的完整流程。</p>
+      <p>這堂課真正想替你省下的是：大量不必要的試錯。</p>
+    </div>
+  </div>
+
+  <div class="divider"><span class="star">✦</span></div>
+
+  <div class="price-card">
+    <div class="price-old">正式售價 NT$24,800</div>
+    <div class="price-tag">NT$19,800</div>
+    <div class="price-badge">🌙 創始早鳥價・第一梯限定</div>
+    <div class="price-note">14 天陪跑期＋前後彈性收尾</div>
+    <ul class="price-includes">
+      <li>9 個任務，AI 助教小安全程陪你動手</li>
+      <li>真人開場＋Final Review＋固定批次陪跑時段</li>
+      <li>原型入場檢查＋上線前檢查，安安親自審核</li>
+      <li>畢業作品：正式網址、資料保存方式清楚、手機可用</li>
+      <li>已購買不受未來漲價影響</li>
+    </ul>
+    <a class="action-btn btn-primary" href="https://api.payuni.com.tw/api/uop/receive_info/2/1/HTCU1150501000389/Acoq75zAYdIPF6Km6LmD3" target="_blank" rel="noopener">立即購買 →</a>
+    <div class="line-note">
+      <p>📸 付款完成後，請務必<strong>截圖訂單</strong>，加官方 LINE 完成身份核對，安安會親自安排你的原型入場檢查與課程開通。</p>
+      <a class="line-btn" href="https://lin.ee/o8zgTVv" target="_blank" rel="noopener">💬 加入官方 LINE →</a>
+    </div>
+  </div>
+  <p class="caption-note" style="margin-top:12px;">第一梯我保留創始價格。因為這一梯除了帶大家完成產品，我也會持續記錄大家最常卡住哪裡、哪些教材需要補、哪些錯誤最常重複、哪些流程可以變得更簡單、哪些檢查應該再加強。未來整套陪跑系統越成熟，價格也會重新評估。</p>
+
+  <div class="divider"><span class="star">✦</span></div>
+
+  <h2 class="section-title">你適合加入，如果你</h2>
+  <div class="fit-grid">
+    <div class="fit-card yes">
+      <div class="ft-title">✓ 適合</div>
+      <ul>
+        <li>已經有一個可以操作的 AI 原型</li>
+        <li>很想讓它變成真正可以分享的公開網址</li>
+        <li>想讓產品具備開始對外提供或販售的基本條件</li>
+        <li>不會寫程式，願意自己動手</li>
+        <li>願意接受 AI 很快，但產品仍需要測試</li>
+        <li>不想自己拼一堆零碎教學</li>
+        <li>希望有人協助判斷產品有沒有做偏</li>
+        <li>希望真正完成，而不是再收藏一門課</li>
+      </ul>
+    </div>
+    <div class="fit-card no">
+      <div class="ft-title">✕ 不適合</div>
+      <ul>
+        <li>希望我直接替你把產品做完</li>
+        <li>完全不想自己操作</li>
+        <li>希望 24 小時隨時有人服務</li>
+        <li>希望加入後一定賺錢</li>
+        <li>想做大型會員 SaaS</li>
+        <li>想處理大量敏感個資</li>
+        <li>想做醫療／金融等高風險系統</li>
+        <li>想學完整工程技術</li>
+        <li>完全還沒有任何產品原型</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="divider"><span class="star">✦</span></div>
+
+  <div class="closing-card">
+    <p>我做《萬物皆可創》的時候，其實只是很喜歡一件事：創造。把原本只存在腦袋裡的東西，真的做出來。</p>
+    <p style="margin-top:12px;"><strong>後來我才發現：創造不只可以滿足一個人的精神，它甚至有機會改變一個人的物質生活。</strong></p>
+    <p style="margin-top:12px;">而現在我更想做的是：把這個能力傳給下一個人。不是讓你做跟我一樣的產品，而是讓你做只有你才會想到的東西，也許來自你的工作經驗，也許來自你的專業，也許只是生活裡一個你一直覺得「如果有這個東西就好了」的念頭。</p>
+    <p style="margin-top:12px;">以前你可能只能想。現在，AI 讓「把它做出來」的門檻變得比以前低很多。</p>
+    <p style="margin-top:12px;font-weight:700;">如果你的第一版已經存在了，那接下來，我想陪你把它真正送到世界裡嘿嘿！</p>
+  </div>
+
+  <div class="divider"><span class="star">✦</span></div>
+
+  <h2 class="section-title">❓ 常見問題</h2>
+  <div class="faq-item">
+    <div class="faq-q">我完全不會寫程式，真的能做出來嗎？</div>
+    <div class="faq-a"><p>可以。小安會一步步陪你，任何專業名詞都會附白話翻譯。</p><p>遇到你聽不懂的地方可以隨時問，不會假設你已經懂。</p></div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">做出來的東西可以拿去賣給客人用嗎？</div>
+    <div class="faq-a"><p>可以，你也可以把做好的模板重複提供給不同的買家各自使用。</p><p>但這堂課不教「大家登入同一個系統」的會員系統，那是更進階的範圍。</p></div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">要收款、要開發票怎麼辦？</div>
+    <div class="faq-a"><p>這堂課不教把金流串進你的產品，我們教你用金流商現成的付款連結收款，不用寫任何程式碼。</p><p>發票與稅務屬於你自己的商業登記範圍，建議諮詢會計師。</p></div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">這 19,800 包含無限問答、代做嗎？</div>
+    <div class="faq-a"><p>不包含。小安負責陪你動手、解釋概念；安安負責產品方向判斷跟最終把關。</p><p>不提供 24 小時即時客服或代做完整產品。</p></div>
+  </div>
+
+  <div class="divider"><span class="star">✦</span></div>
+
+  <h2 class="section-title">📋 服務條款與相關政策</h2>
+  <div class="section-sub">點開看完整內容。</div>
+
+  <details class="accordion">
+    <summary>服務條款</summary>
+    <div class="acc-body">
+      <p>本計畫為 28 天服務期（14 天 Build Sprint＋彈性收尾），包含數位教材、直播陪跑、AI 助教陪伴、真人 Gate 審核。</p>
+      <p>本計畫明確不承諾：保證上線、保證營收、無限問答、代做完整產品、24 小時客服、會員登入系統、金流串接與電子發票。</p>
+      <p>教材、Prompt、Checklist 僅供購買者本人使用，不得轉售、重製、公開散布，或用來開設高度相似的課程。</p>
+    </div>
+  </details>
+
+  <details class="accordion">
+    <summary>退換貨與退款機制</summary>
+    <div class="acc-body">
+      <p>本計畫為包含直播與陪跑服務的組合式商品，一經購買完成付款，即不接受退款。</p>
+      <p>請於報名前詳讀「適合對象」「不適合加入」與常見問題中的不承諾項目，確認產品與範圍符合你的需求後再購買。</p>
+      <p>缺席、未交作業或未使用權益，不自動延長服務或退費。</p>
+    </div>
+  </details>
+
+  <details class="accordion">
+    <summary>隱私權政策</summary>
+    <div class="acc-body">
+      <p>會蒐集：姓名、聯絡方式、付款資訊（透過金流商處理，不會直接經手信用卡卡號）、原型入場檢查與畢業檢查表單中填寫的資料。</p>
+      <p>這些資料僅用於課程審核與聯繫，不會轉售或提供給無關第三方。</p>
+      <p>學員在課程中產出的自己的產品與資料，所有權歸學員所有，安安不會存取或使用。</p>
+    </div>
+  </details>
+
+  <details class="accordion">
+    <summary>客服聯絡資訊</summary>
+    <div class="acc-body">
+      <p>官方 LINE 負責付款後行政通知、帳號問題與重要公告，不處理技術問答。</p>
+      <p>技術與課程問題統一在 LINE 社群／Notion 卡關提問區提交，安安於固定批次時段（每週二、四、六）集中回覆，不是即時客服。</p>
+    </div>
+  </details>
+
+  <div class="divider"><span class="star">✦</span></div>
+
+  <div class="not-promise">
+    <div class="not-promise-title">誠實聲明・這堂課不承諾</div>
+    <ul>
+      <li>流量保證</li>
+      <li>成交保證</li>
+      <li>收入保證</li>
+      <li>零漏洞保證</li>
+      <li>企業級安全驗證</li>
+      <li>完整工程開發服務</li>
+      <li>會員帳號與多人資料隔離</li>
+      <li>金流串接與電子發票</li>
+    </ul>
+  </div>
+
+  <div class="disclaimer">
+    <p><strong>誠實聲明：</strong>Sabrina 個人約 10 天接近 NT$200,000 的銷售成果，以及個別使用者首日超過 NT$5,000 的案例，皆屬特定個人的實際執行成果，不代表或保證參加本計畫後可以取得相同收入，具體要看個人努力以及執行力成果。</p>
+    <p>本計畫的核心交付為：協助符合入學範圍的輕量型產品，依照課程流程從 AI 原型完成至公開網址、真人測試，以及本課程定義的基本上線與交付檢查。</p>
+    <p>是否適合正式商業使用，仍應依產品實際用途、資料類型、第三方服務、法規要求與技術架構判斷。若產品涉及大量敏感資料、會員／多租戶架構、醫療、金融、法律或其他高風險使用情境，可能需要另外尋求專業工程、資安或法律人士協助。</p>
+    <p>實際完成時間與成果仍取決於原型複雜度、學員投入時間、第三方工具狀況與實際執行情況。</p>
+  </div>
+
+</div>
+
+<div class="page-footer">
+  本頁面僅為商品介紹展示，實際購買與付款請透過官方通路進行。<br>
+  → 先完成原型入場檢查（Prototype Gate），確認你的產品是否符合這一梯的範圍。<br>
+  © 萬物皆可創 · 用你自己的語言，做出屬於你的作品
+</div>
+
+</body>
+</html>
