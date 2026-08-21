@@ -230,10 +230,21 @@ h2.section-title{font-size:20px;font-weight:700;color:var(--ink);line-height:1.5
 .np-bar{display:flex;align-items:center;gap:6px;padding:11px 16px;background:var(--paper);border-bottom:1px solid var(--line);}
 .np-dot{width:7px;height:7px;border-radius:50%;background:var(--line-strong);}
 .np-bar-label{margin-left:6px;font-size:11px;color:var(--ink-faint);}
-.np-body{padding:20px 20px 0;}
-.np-title{font-family:'Noto Serif TC',serif;font-size:15px;font-weight:700;color:var(--ink);margin-bottom:13px;}
+.np-body{padding:20px 20px 4px;}
+.np-title{font-family:'Noto Serif TC',serif;font-size:15px;font-weight:700;color:var(--ink);margin-bottom:10px;}
+.np-welcome{font-size:12.5px;color:var(--ink-soft);line-height:1.85;margin-bottom:12px;}
+.np-welcome strong{color:var(--ink);}
+.np-callout{display:flex;gap:8px;align-items:flex-start;background:var(--pink-soft);border-radius:10px;padding:10px 12px;font-size:12px;color:var(--pink-ink);line-height:1.7;margin-bottom:18px;}
+.np-section-label{font-size:11.5px;font-weight:700;color:var(--ink-faint);letter-spacing:.02em;margin-bottom:6px;}
 .np-item{display:flex;gap:10px;align-items:center;font-size:13px;color:var(--ink-soft);padding:8px 0;border-bottom:1px solid var(--line);}
+.np-item:last-child{border-bottom:none;}
+.np-item.optional{color:var(--ink-faint);}
+.np-item .np-optional-tag{margin-left:auto;font-size:10.5px;font-weight:700;color:var(--latte);background:var(--latte-soft);padding:2px 8px;border-radius:10px;flex-shrink:0;}
 .np-box{width:14px;height:14px;border-radius:4px;border:1.5px solid var(--line-strong);flex-shrink:0;}
+.np-notdo{list-style:none;margin:0 0 4px;}
+.np-notdo li{font-size:12.5px;color:var(--ink-faint);padding:7px 0;border-bottom:1px solid var(--line);}
+.np-notdo li:last-child{border-bottom:none;}
+.np-caption{font-size:11.5px;color:var(--ink-faint);line-height:1.8;padding:12px 20px 18px;background:var(--paper);border-top:1px solid var(--line);}
 .np-fade{height:112px;margin-top:-2px;background:linear-gradient(to bottom, rgba(255,255,255,0) 0%, var(--paper-raised) 80%);display:flex;align-items:flex-end;justify-content:center;padding-bottom:16px;}
 .np-lock{background:var(--paper);border:1px solid var(--line-strong);border-radius:20px;padding:6px 15px;font-size:11.5px;color:var(--blue);font-weight:700;}
 
@@ -714,16 +725,39 @@ h2.section-title{font-size:20px;font-weight:700;color:var(--ink);line-height:1.5
   <div class="divider"><span class="star">✦</span></div>
 
   <h2 class="section-title">📓 課程內容長什麼樣子</h2>
-  <div class="section-sub">入學後你會在 Notion 看到完整 9 個任務的頁面，這裡只先讓你看一小部分。</div>
+  <div class="section-sub">入學後你會在 Notion 看到這個課程首頁，點進每一個任務才會展開完整的操作步驟。</div>
   <div class="notion-preview">
-    <div class="np-bar"><span class="np-dot"></span><span class="np-dot"></span><span class="np-dot"></span><span class="np-bar-label">Notion · 萬物皆可創・AI 產品上線陪跑計畫</span></div>
+    <div class="np-bar"><span class="np-dot"></span><span class="np-dot"></span><span class="np-dot"></span><span class="np-bar-label">Notion · 萬物皆可創｜打造AI產品上線陪跑計劃🪐</span></div>
     <div class="np-body">
       <div class="np-title">🗺️ 課程首頁</div>
-      <div class="np-item"><span class="np-box"></span>入學檢查 Prototype Gate</div>
-      <div class="np-item"><span class="np-box"></span>任務 1・原型健檢</div>
-      <div class="np-item"><span class="np-box"></span>任務 2・鎖定使用者</div>
-      <div class="np-fade"><span class="np-lock">🔒 完整 9 個任務內容，入學後於 Notion 開放</span></div>
+      <div class="np-welcome">
+        歡迎來到<strong>萬物皆可創・AI 產品上線實戰營 🪐</strong><br>
+        你今天不是來學 AI，是來把你已經用 888 引導包做出的原型，變成一個真正能給別人用的作品。<br>
+        14 天，9 個任務。每個任務只問一件事，跟著小安助教一步步走就好 🌙
+      </div>
+      <div class="np-callout"><span>🌙</span><span>卡關的時候，先問小安。遇到需要判斷的地方，小安會請你到「卡關提問區」找安安。</span></div>
+
+      <div class="np-section-label">✅ 你的進度地圖</div>
+      <div class="np-item"><span class="np-box"></span>🚪 入學檢查 Prototype Gate</div>
+      <div class="np-item"><span class="np-box"></span>🩺 任務 1・原型健檢</div>
+      <div class="np-item"><span class="np-box"></span>🎯 任務 2・鎖定使用者</div>
+      <div class="np-item"><span class="np-box"></span>📐 任務 3・可驗收規格</div>
+      <div class="np-item"><span class="np-box"></span>💾 任務 4・建立安全版本</div>
+      <div class="np-item"><span class="np-box"></span>🧭 任務 5・核心流程</div>
+      <div class="np-item"><span class="np-box"></span>🗄️ 任務 6・資料保存</div>
+      <div class="np-item"><span class="np-box"></span>🚀 任務 7・預覽與部署</div>
+      <div class="np-item"><span class="np-box"></span>🧪 任務 8・真人測試</div>
+      <div class="np-item"><span class="np-box"></span>🏁 任務 9・上線檢查</div>
+      <div class="np-item optional"><span class="np-box"></span>🎁 加碼任務・官方帳號與收款連結<span class="np-optional-tag">選讀</span></div>
+
+      <div class="np-section-label" style="margin-top:18px;">🚫 這堂課不教什麼</div>
+      <ul class="np-notdo">
+        <li>🔐 會員登入、多人帳號系統</li>
+        <li>💳 金流串接、電子發票（改用金流商現成付款連結）</li>
+        <li>🙅 保證上線、保證營收、無限問答、代做完整產品</li>
+      </ul>
     </div>
+    <div class="np-caption">📓 以上為 Notion 課程首頁實際畫面，入學後每個任務點進去會展開完整的操作步驟與檢查清單。</div>
   </div>
 
   <div class="divider"><span class="star">✦</span></div>
