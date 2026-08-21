@@ -268,7 +268,14 @@ h2.section-title{font-size:20px;font-weight:700;color:var(--ink);line-height:1.5
 .result-gallery.duo{grid-template-columns:repeat(2,1fr);max-width:340px;margin-left:auto;margin-right:auto;}
 .result-gallery+.result-gallery.duo{margin-top:8px;}
 .result-gallery.single{grid-template-columns:1fr;max-width:230px;margin-left:auto;margin-right:auto;}
-.result-gallery img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top;border-radius:12px;border:1px solid var(--line);display:block;}
+.result-gallery img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top;border-radius:12px;border:1px solid var(--line);display:block;cursor:zoom-in;transition:opacity .15s;}
+.result-gallery img:hover{opacity:.85;}
+
+.lightbox{position:fixed;inset:0;background:rgba(20,16,26,.86);display:none;align-items:center;justify-content:center;padding:24px;z-index:999;cursor:zoom-out;}
+.lightbox.open{display:flex;}
+.lightbox img{max-width:100%;max-height:100%;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.5);}
+.lightbox-close{position:absolute;top:18px;right:20px;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;border:none;font-size:20px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+.lightbox-close:hover{background:rgba(255,255,255,.24);}
 @media(max-width:480px){.result-gallery{grid-template-columns:repeat(2,1fr);}}
 
 /* ===== 價格 ===== */
@@ -1038,5 +1045,39 @@ h2.section-title{font-size:20px;font-weight:700;color:var(--ink);line-height:1.5
   © 萬物皆可創 · 用你自己的語言，做出屬於你的作品
 </div>
 
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="關閉">✕</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+<script>
+(function(){
+  var lightbox = document.getElementById('lightbox');
+  var lightboxImg = document.getElementById('lightboxImg');
+
+  function openLightbox(src, alt){
+    lightboxImg.src = src;
+    lightboxImg.alt = alt || '';
+    lightbox.classList.add('open');
+  }
+  function closeLightbox(){
+    lightbox.classList.remove('open');
+    lightboxImg.src = '';
+  }
+
+  document.querySelectorAll('.result-gallery img').forEach(function(img){
+    img.addEventListener('click', function(){
+      openLightbox(img.src, img.alt);
+    });
+  });
+
+  document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', function(e){
+    if(e.target === lightbox) closeLightbox();
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeLightbox();
+  });
+})();
+</script>
 </body>
 </html>
