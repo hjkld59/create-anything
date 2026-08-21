@@ -228,6 +228,20 @@ h2.section-title{font-size:20px;font-weight:700;color:var(--ink);line-height:1.5
 .work-shot img{width:100%;display:block;}
 .works-link{display:block;text-align:center;font-size:13px;color:var(--pink);font-weight:600;text-decoration:none;border:1.5px solid var(--pink-deco);border-radius:12px;padding:11px;}
 
+/* ===== 案例學員成果 ===== */
+.results-wrap{display:flex;flex-direction:column;gap:16px;}
+.result-card{background:var(--paper-raised);border:1px solid var(--line);border-radius:20px;padding:24px 22px;box-shadow:0 2px 18px -8px rgba(42,36,64,.14);}
+.result-tag{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:700;padding:5px 14px;border-radius:20px;margin-bottom:14px;}
+.result-tag.tag-pink{background:var(--pink-soft);color:var(--pink-ink);}
+.result-tag.tag-blue{background:var(--blue-soft);color:var(--blue);}
+.result-card p{font-size:13.5px;color:var(--ink-soft);}
+.result-underline{text-decoration:underline;text-decoration-color:var(--pink-deco);text-decoration-thickness:2px;text-underline-offset:3px;color:var(--pink-ink);font-weight:700;}
+.result-gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:16px;}
+.result-gallery.duo{grid-template-columns:repeat(2,1fr);max-width:340px;margin-left:auto;margin-right:auto;}
+.result-gallery.single{grid-template-columns:1fr;max-width:230px;margin-left:auto;margin-right:auto;}
+.result-gallery img{width:100%;border-radius:12px;border:1px solid var(--line);display:block;}
+@media(max-width:480px){.result-gallery{grid-template-columns:repeat(2,1fr);}}
+
 /* ===== 價格 ===== */
 .price-card{background:var(--paper-raised);border:1.5px solid var(--line-strong);border-radius:22px;padding:30px 26px;text-align:center;box-shadow:0 20px 46px -26px rgba(42,36,64,.4);}
 .price-old{font-size:14px;color:var(--ink-faint);text-decoration:line-through;margin-bottom:2px;}
@@ -697,6 +711,39 @@ h2.section-title{font-size:20px;font-weight:700;color:var(--ink);line-height:1.5
     <div class="work-shot"><img src="assets/testimonial-story.jpg" alt="學員作品與回饋 3"></div>
   </div>
   <a class="works-link" href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MzUxMjkzNjgwMTcwOTI0?igsh=MXBhdDI2MHo2dm9paQ==&igsi=MXBhdDI2MHo2dm9paQ==" target="_blank" rel="noopener">📸 到 IG 精選動態看更多學員作品 →</a>
+
+  <div class="divider"><span class="star">✦</span></div>
+
+  <h2 class="section-title">🏆 案例學員成果</h2>
+  <div class="section-sub">不是喊口號，是他們真的把自己的專長，變成了看得見的收入。</div>
+
+  <div class="results-wrap">
+
+    <div class="result-card">
+      <span class="result-tag tag-pink">🌸 自媒體網路經營者 Alice</span>
+      <p>Alice 把自己這幾年經營自媒體、抓流量的專長與經驗，整理成一台「爆款文案選題製造機」——完全屬於她自己的數位產品。</p>
+      <p>上架後不到 12 小時，名額就全數賣光，粉絲們甚至敲碗許願要她趕快追加。</p>
+      <p>一個晚上，她就靠這個自己做出來的數位產品，帶來<span class="result-underline">將近三萬元的淨利潤，而且還在持續增加中</span>！</p>
+      <div class="result-gallery">
+        <img src="assets/case-alice-product.jpg" alt="Alice 的爆款製造機銷售頁截圖">
+        <img src="assets/case-alice-stats.png" alt="Alice 的 Threads 觀看次數與觸及數據截圖">
+        <img src="assets/case-alice-chat1.jpg" alt="Alice 分享賣了 23 份、一個晚上賺了兩萬的對話截圖">
+        <img src="assets/case-alice-chat2.jpg" alt="Alice 感謝引導包幫助她做出爆款製造機的對話截圖">
+      </div>
+    </div>
+
+    <div class="result-card">
+      <span class="result-tag tag-blue">💧 霧唇美業經營者 小陳</span>
+      <p>小陳原本三個月只累積 300 位預約。透過課程，她把自己多年累積的美業專長與經驗，做成一套真正屬於美業人的預約系統。</p>
+      <p>短短 6 天，就替自己加薪 <strong style="color:var(--blue);">NT$15,000</strong> 淨利潤。</p>
+      <p>這套系統同時也幫助更多中小規模的美業經營者，能完整清楚掌握每個月的營運狀況，客人們也都直呼物超所值。</p>
+      <div class="result-gallery duo">
+        <img src="assets/case-chen-dashboard.png" alt="小陳的美業經營儀表板系統截圖">
+        <img src="assets/case-chen-orders.jpg" alt="小陳 6 天 15 筆訂單、淨賺 NT$15,000 的交易紀錄截圖">
+      </div>
+    </div>
+
+  </div>
 
   <div class="divider"><span class="star">✦</span></div>
 
