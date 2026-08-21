@@ -264,7 +264,9 @@ h2.section-title{font-size:20px;font-weight:700;color:var(--ink);line-height:1.5
 .result-card p{font-size:13.5px;color:var(--ink-soft);}
 .result-underline{text-decoration:underline;text-decoration-color:var(--pink-deco);text-decoration-thickness:2px;text-underline-offset:3px;color:var(--pink-ink);font-weight:700;}
 .result-gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:16px;}
+.result-gallery.trio{grid-template-columns:repeat(3,1fr);}
 .result-gallery.duo{grid-template-columns:repeat(2,1fr);max-width:340px;margin-left:auto;margin-right:auto;}
+.result-gallery+.result-gallery.duo{margin-top:8px;}
 .result-gallery.single{grid-template-columns:1fr;max-width:230px;margin-left:auto;margin-right:auto;}
 .result-gallery img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top;border-radius:12px;border:1px solid var(--line);display:block;}
 @media(max-width:480px){.result-gallery{grid-template-columns:repeat(2,1fr);}}
@@ -796,10 +798,12 @@ h2.section-title{font-size:20px;font-weight:700;color:var(--ink);line-height:1.5
       <p>Alice 把自己這幾年經營自媒體、抓流量的專長與經驗，整理成一台「爆款文案選題製造機」——完全屬於她自己的數位產品。</p>
       <p>上架後不到 12 小時，名額就全數賣光，粉絲們甚至敲碗許願要她趕快追加。</p>
       <p>一個晚上，她就靠這個自己做出來的數位產品，帶來<span class="result-underline">四萬七千多元的淨利潤，而且還在持續增加中</span>！</p>
-      <div class="result-gallery">
+      <div class="result-gallery trio">
         <img src="assets/case-alice-product.jpg" alt="Alice 的爆款製造機銷售頁截圖">
         <img src="assets/case-alice-stats.jpg" alt="Alice 的 Threads 觀看次數與觸及數據截圖">
         <img src="assets/case-alice-chat1.jpg" alt="Alice 分享賣了 23 份、一個晚上賺了兩萬的對話截圖">
+      </div>
+      <div class="result-gallery duo">
         <img src="assets/case-alice-chat2.jpg" alt="Alice 感謝引導包幫助她做出爆款製造機的對話截圖">
         <img src="assets/case-alice-chat3.jpg" alt="Alice 分享上架不到 24 小時已付款金額 47,453 元的後台截圖與對話">
       </div>
