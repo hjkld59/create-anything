@@ -348,6 +348,9 @@ h2.section-title{font-size:20px;font-weight:700;color:var(--ink);line-height:1.5
   .opener,.panel,.price-card,.closing-card,.footer-card{ padding-top:34px; padding-bottom:34px; }
   .intro-card,.ai-card,.result-card{ padding-top:30px; padding-bottom:30px; }
 }
+
+/* ===== 置頂導航跳轉錨點留白（避免被 sticky nav 蓋住） ===== */
+#tasks,#deliverables,#flow,#cases,#fit,#price{scroll-margin-top:64px;}
 </style>
 </head>
 <body>
@@ -366,6 +369,16 @@ h2.section-title{font-size:20px;font-weight:700;color:var(--ink);line-height:1.5
   </div>
 </div>
 <div class="hero-pad"></div>
+
+<!-- 置頂小目錄 · 讓長頁可以跳著看 -->
+<nav id="page-nav" style="position:sticky;top:0;z-index:50;background:rgba(250,246,241,.95);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid #E4DBD0;padding:10px 12px;display:flex;gap:8px;overflow-x:auto;white-space:nowrap;justify-content:flex-start;scrollbar-width:none">
+  <a href="#tasks" style="flex-shrink:0;font-size:12.5px;font-weight:600;color:#5B5347;background:#fff;border:1px solid #E4DBD0;padding:6px 14px;border-radius:20px;text-decoration:none">9 任務</a>
+  <a href="#deliverables" style="flex-shrink:0;font-size:12.5px;font-weight:600;color:#5B5347;background:#fff;border:1px solid #E4DBD0;padding:6px 14px;border-radius:20px;text-decoration:none">帶走 13 樣</a>
+  <a href="#flow" style="flex-shrink:0;font-size:12.5px;font-weight:600;color:#5B5347;background:#fff;border:1px solid #E4DBD0;padding:6px 14px;border-radius:20px;text-decoration:none">陪跑方式</a>
+  <a href="#cases" style="flex-shrink:0;font-size:12.5px;font-weight:600;color:#5B5347;background:#fff;border:1px solid #E4DBD0;padding:6px 14px;border-radius:20px;text-decoration:none">學員成果</a>
+  <a href="#fit" style="flex-shrink:0;font-size:12.5px;font-weight:600;color:#5B5347;background:#fff;border:1px solid #E4DBD0;padding:6px 14px;border-radius:20px;text-decoration:none">適合對象</a>
+  <a href="#price" style="flex-shrink:0;font-size:12.5px;font-weight:700;color:#fff;background:#8C6660;border:1px solid #8C6660;padding:6px 14px;border-radius:20px;text-decoration:none">立即購買 NT$19,800 →</a>
+</nav>
 
 <div class="main">
 
@@ -518,7 +531,7 @@ h2.section-title{font-size:20px;font-weight:700;color:var(--ink);line-height:1.5
 
   <div class="divider"><span class="star">✦</span></div>
 
-  <h2 class="section-title">🧩 14 天，你會完成什麼？</h2>
+  <h2 id="tasks" class="section-title">🧩 14 天，你會完成什麼？</h2>
   <div class="section-sub">不是 14 天一直坐著聽課。大部分的時間，你都會直接拿自己的產品實作。整個流程拆成 9 個真正需要完成的任務——點開看每個任務具體在做什麼。</div>
 
   <details class="task-acc"><summary><span class="t-num">01</span><span class="t-name">原型健檢</span><span class="t-icon">＋</span></summary>
@@ -650,7 +663,7 @@ h2.section-title{font-size:20px;font-weight:700;color:var(--ink);line-height:1.5
 
   <div class="divider"><span class="star">✦</span></div>
 
-  <h2 class="section-title">🧩 陪跑方式｜不是把課丟給你，而是真的有人陪你把產品做完</h2>
+  <h2 id="flow" class="section-title">🧩 陪跑方式｜不是把課丟給你，而是真的有人陪你把產品做完</h2>
   <p>這堂課不是買完之後，丟一堆影片讓你自己慢慢研究唷！<br>也不是 24 小時隨時私訊、什麼問題都丟給我處理。</p>
   <p>我設計的是一套：<br>有節奏、有回饋、有真人判斷，也保留你自己完成能力的陪跑方式。</p>
   <p class="caption-note">因為我不希望你只是「因為安安陪你做完這一次」。我更希望你真的學會：下一次遇到問題，知道自己可以怎麼找答案、怎麼判斷、怎麼把產品繼續完成。</p>
@@ -773,7 +786,7 @@ h2.section-title{font-size:20px;font-weight:700;color:var(--ink);line-height:1.5
 
   <div class="divider"><span class="star">✦</span></div>
 
-  <h2 class="section-title">🏆 案例學員成果</h2>
+  <h2 id="cases" class="section-title">🏆 案例學員成果</h2>
   <div class="section-sub">不是喊口號，是他們真的把自己的專長，變成了看得見的收入。</div>
 
   <div class="results-wrap">
@@ -782,7 +795,7 @@ h2.section-title{font-size:20px;font-weight:700;color:var(--ink);line-height:1.5
       <span class="result-tag tag-pink">🌸 自媒體網路經營者 Alice</span>
       <p>Alice 把自己這幾年經營自媒體、抓流量的專長與經驗，整理成一台「爆款文案選題製造機」——完全屬於她自己的數位產品。</p>
       <p>上架後不到 12 小時，名額就全數賣光，粉絲們甚至敲碗許願要她趕快追加。</p>
-      <p>一個晚上，她就靠這個自己做出來的數位產品，帶來<span class="result-underline">將近三萬元的淨利潤，而且還在持續增加中</span>！</p>
+      <p>一個晚上，她就靠這個自己做出來的數位產品，帶來<span class="result-underline">四萬七千多元的淨利潤，而且還在持續增加中</span>！</p>
       <div class="result-gallery">
         <img src="assets/case-alice-product.jpg" alt="Alice 的爆款製造機銷售頁截圖">
         <img src="assets/case-alice-stats.jpg" alt="Alice 的 Threads 觀看次數與觸及數據截圖">
@@ -822,7 +835,7 @@ h2.section-title{font-size:20px;font-weight:700;color:var(--ink);line-height:1.5
     .card13-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
     @media (max-width:600px){ .card13-grid{grid-template-columns:1fr;} }
   </style>
-  <div style="background:#fff;border:1px solid #E4DBD0;border-radius:20px;padding:26px 22px;box-shadow:0 2px 18px -8px rgba(42,36,64,.14);margin:18px 0">
+  <div id="deliverables" style="background:#fff;border:1px solid #E4DBD0;border-radius:20px;padding:26px 22px;box-shadow:0 2px 18px -8px rgba(42,36,64,.14);margin:18px 0">
     <div style="font:700 11px ui-monospace,monospace;letter-spacing:.14em;color:#7C7368;text-transform:uppercase;margin-bottom:8px">SHIP IT · 14 DAYS</div>
     <h2 style="font-family:'Noto Serif TC',serif;font-size:18px;font-weight:700;line-height:1.5;margin:0 0 4px;color:#37352F">🌙 14 天後，你帶走的 13 樣東西</h2>
     <div style="font-size:12.5px;color:#7C7368;margin-bottom:16px;line-height:1.8">不是多送幾支影片，是走完「原型 → 公開網址 → 可交付」的完整結果</div>
@@ -859,7 +872,13 @@ h2.section-title{font-size:20px;font-weight:700;color:var(--ink);line-height:1.5
     <div style="margin-top:14px;font-size:12px;color:#7C7368;text-align:center">下一次再有新想法，你不會再回到「不知道下一步在哪裡」</div>
   </div>
 
-  <div class="price-card">
+  <!-- 第二個購買鈕 · 看完13樣就能買 -->
+  <div style="text-align:center;margin:14px 0 6px">
+    <a href="https://api.payuni.com.tw/api/uop/receive_info/2/1/HTCU1150501000389/Acoq75zAYdIPF6Km6LmD3" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:#8C6660;color:#fff;padding:12px 28px;border-radius:28px;font-weight:700;font-size:14px;text-decoration:none;box-shadow:0 8px 20px -10px rgba(140,102,96,.6)">立即購買 NT$19,800 →</a>
+    <div style="font-size:11px;color:#7C7368;margin-top:6px">創始早鳥・第一梯限定・已購買不受未來漲價影響</div>
+  </div>
+
+  <div id="price" class="price-card">
     <div class="price-old">正式售價 NT$24,800</div>
     <div class="price-tag">NT$19,800</div>
     <div class="price-badge">🌙 創始早鳥價・第一梯限定</div>
@@ -882,7 +901,7 @@ h2.section-title{font-size:20px;font-weight:700;color:var(--ink);line-height:1.5
 
   <div class="divider"><span class="star">✦</span></div>
 
-  <h2 class="section-title">你適合加入，如果你</h2>
+  <h2 id="fit" class="section-title">你適合加入，如果你</h2>
   <div class="fit-grid">
     <div class="fit-card yes">
       <div class="ft-title">✓ 適合</div>
