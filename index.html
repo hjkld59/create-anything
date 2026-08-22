@@ -1029,5 +1029,31 @@ h2.section-title{font-size:20px;font-weight:700;color:var(--ink);line-height:1.5
   © 萬物皆可創 · 用你自己的語言，做出屬於你的作品
 </div>
 
+<!-- 點擊放大圖片 · lightbox -->
+<div id="lightbox" style="display:none;position:fixed;inset:0;z-index:999;background:rgba(30,26,22,.9);align-items:center;justify-content:center;padding:24px;cursor:zoom-out">
+  <img id="lightbox-img" src="" alt="" style="max-width:100%;max-height:100%;border-radius:10px;box-shadow:0 20px 60px -20px rgba(0,0,0,.6)">
+</div>
+<script>
+(function(){
+  var lightbox = document.getElementById('lightbox');
+  var lightboxImg = document.getElementById('lightbox-img');
+  function openLightbox(src, alt){
+    lightboxImg.src = src;
+    lightboxImg.alt = alt || '';
+    lightbox.style.display = 'flex';
+  }
+  function closeLightbox(){
+    lightbox.style.display = 'none';
+    lightboxImg.src = '';
+  }
+  document.querySelectorAll('.result-gallery img, .work-shot img').forEach(function(img){
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', function(){ openLightbox(img.src, img.alt); });
+  });
+  lightbox.addEventListener('click', closeLightbox);
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeLightbox(); });
+})();
+</script>
+
 </body>
 </html>
