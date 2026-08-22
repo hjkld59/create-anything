@@ -49,6 +49,14 @@
 .gate-btn{width:100%;padding:12px 14px;border:none;border-radius:10px;background:var(--pink);color:#fff;font-weight:700;font-size:14px;cursor:pointer}
 .gate-btn:hover{background:var(--pink-ink,var(--pink))}
 .gate-error{color:var(--danger,#AD4F49);font-size:12.5px;margin:10px 0 0}
+
+.check{cursor:pointer}
+.check input{display:none}
+.check i{position:relative}
+.check input:checked ~ i{background:var(--sage);border-color:var(--sage)}
+.check input:checked ~ i::after{content:'';position:absolute;left:5px;top:1px;width:5px;height:9px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.check input:checked ~ span{color:var(--ink3);text-decoration:line-through}
+.report-note{font-size:13px;color:var(--ink2);margin:0 0 12px}
 </style>
 </head>
 <body>
@@ -78,11 +86,11 @@
 </div>
 <div class="card">
 <h3><span class="tag tag-blue">報名前請確認</span> 📋</h3>
-<div class="check"><i></i><span>✅ 已完成 888 引導包，或已有可操作原型</span></div>
-<div class="check"><i></i><span>💻 有電腦與穩定網路，不能只用手機參加</span></div>
-<div class="check"><i></i><span>⏰ 每週可投入約 8-12 小時</span></div>
-<div class="check"><i></i><span>💰 接受 AI（含 Claude Pro/Max 訂閱）、GitHub 帳號、網域主機等第三方費用自行負擔</span></div>
-<div class="check"><i></i><span>🔐 產品不需要會員登入或處理大量客戶個資</span></div>
+<label class="check"><input type="checkbox"/><i></i><span>✅ 已完成 888 引導包，或已有可操作原型</span></label>
+<label class="check"><input type="checkbox"/><i></i><span>💻 有電腦與穩定網路，不能只用手機參加</span></label>
+<label class="check"><input type="checkbox"/><i></i><span>⏰ 每週可投入約 8-12 小時</span></label>
+<label class="check"><input type="checkbox"/><i></i><span>💰 接受 AI（含 Claude Pro/Max 訂閱）、GitHub 帳號、網域主機等第三方費用自行負擔</span></label>
+<label class="check"><input type="checkbox"/><i></i><span>🔐 產品不需要會員登入或處理大量客戶個資</span></label>
 </div>
 <div class="card">
 <h3><span class="tag tag-sage">📨 表單送出後</span> 你會收到以下四種結果之一</h3>
@@ -91,6 +99,18 @@
 <div class="step"><div class="step-n">🟠</div><div class="step-t"><strong>先完成 888</strong> — 還沒有原型，建議先走完引導包再回來</div></div>
 <div class="step"><div class="step-n">🔴</div><div class="step-t"><strong>目前不適合這梯</strong> — 產品涉及會員帳號或敏感資料，建議調整方向或等待進階梯</div></div>
 </div>
+<div class="card"><h3><span class="tag tag-sage">回報進度</span> 打勾確認沒問題後</h3><p class="report-note">打勾完成、確認沒問題後請截圖，複製下面這段「任務完成回報」，貼到 LINE 社群「本關卡記事本」下面留言，並附上一張畫面截圖 📸</p><div style="position:relative"><button class="copy-btn" onclick="copyPromptBox(this)">📋 一鍵複製回報格式</button><div class="prompt-box">【入學檢查 完成 🪐】
+
+我是＿＿＿＿
+我的產品是＿＿＿＿
+
+今天原本卡在：＿＿＿＿
+
+完成這一關後，我最大的發現是：＿＿＿＿
+
+目前產品理想進度：＿＿％
+
+📸 最後附上一張你的畫面／成果／網址截圖</div></div></div>
 <div class="card" style="background:#E8F0E8;border:1px solid #8FB89A">
 <h3>💬 卡住／有問題在哪留言？（重要！）</h3>
 <p style="margin:0;font-size:13px">看完本頁，想提問請回到安安的 LINE 社群「關卡討論串」裡面留言帶圖發問！</p>
@@ -101,6 +121,44 @@
 </div>
 </div>
 <script>
+
+document.querySelectorAll('.check input[type="checkbox"]').forEach(function(cb, idx){
+  var key = 'chk_' + location.pathname + '_' + idx;
+  try{ if (localStorage.getItem(key) === '1') cb.checked = true; }catch(e){}
+  cb.addEventListener('change', function(){
+    try{ localStorage.setItem(key, cb.checked ? '1' : '0'); }catch(e){}
+  });
+});
+window.copyPromptBox = function(btn){
+  var box = btn.nextElementSibling;
+  var text = box.innerText || box.textContent;
+  function done(){
+    var o = btn.innerHTML;
+    btn.innerHTML = '✅ 已複製！';
+    btn.style.background = '#4F7A5D';
+    setTimeout(function(){ btn.innerHTML = o; btn.style.background = '#C9938A'; }, 2000);
+  }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(done).catch(function(){
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      done();
+    });
+  } else {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    done();
+  }
+};
+
 (function(){
   var PASSWORD = "5888";
   var KEY = "course_unlocked_5888";

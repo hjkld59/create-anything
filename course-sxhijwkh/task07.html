@@ -49,6 +49,14 @@
 .gate-btn{width:100%;padding:12px 14px;border:none;border-radius:10px;background:var(--pink);color:#fff;font-weight:700;font-size:14px;cursor:pointer}
 .gate-btn:hover{background:var(--pink-ink,var(--pink))}
 .gate-error{color:var(--danger,#AD4F49);font-size:12.5px;margin:10px 0 0}
+
+.check{cursor:pointer}
+.check input{display:none}
+.check i{position:relative}
+.check input:checked ~ i{background:var(--sage);border-color:var(--sage)}
+.check input:checked ~ i::after{content:'';position:absolute;left:5px;top:1px;width:5px;height:9px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.check input:checked ~ span{color:var(--ink3);text-decoration:line-through}
+.report-note{font-size:13px;color:var(--ink2);margin:0 0 12px}
 </style>
 </head>
 <body>
@@ -78,7 +86,19 @@
 </div><div class="card"><h3><span class="tag tag-pink">A</span> 申請 GitHub 帳號（只需要做一次）</h3><div class="step"><div class="step-n">1</div><div class="step-t">打開瀏覽器，前往 <strong>github.com</strong></div></div><div class="step"><div class="step-n">2</div><div class="step-t">點右上角「<strong>Sign up</strong>」</div></div><div class="step"><div class="step-n">3</div><div class="step-t">依序輸入 Email、設定密碼、取一個使用者名稱（這組名稱之後會出現在網址裡，例如 你的名稱.github.io，建議取好記、跟品牌相關的英文名稱）</div></div><div class="step"><div class="step-n">4</div><div class="step-t">完成人機驗證，方案選「<strong>Free</strong>」就好</div></div><div class="step"><div class="step-n">5</div><div class="step-t">收到驗證信後，點信裡的連結完成驗證 📬</div></div></div><div class="card"><h3><span class="tag tag-blue">B</span> 讓 Claude Code 把作品推上 GitHub</h3><div class="step"><div class="step-n">1</div><div class="step-t">在 Claude Code 網頁版（claude.ai/code）找到「連結 GitHub」設定，登入帳號，畫面會出現「<strong>Authorize</strong>」按下去完成連結</div></div><div class="step"><div class="step-n">2</div><div class="step-t">跟小安說「幫我把這個專案推上 GitHub」，會自動建立一個 repository（倉庫）並把檔案上傳上去</div></div><div class="step"><div class="step-n">3</div><div class="step-t">完成後會拿到一個 github.com/你的帳號/專案名稱 的網址——這還不是公開網址，只是程式碼放的地方</div></div></div><div class="card"><h3><span class="tag tag-sage">C</span> 打開 GitHub Pages（把倉庫變成公開網頁）</h3><div class="step"><div class="step-n">1</div><div class="step-t">打開上一步拿到的 GitHub 網址，點右上角「<strong>Settings</strong>」</div></div><div class="step"><div class="step-n">2</div><div class="step-t">左側選單找「<strong>Pages</strong>」，點進去</div></div><div class="step"><div class="step-n">3</div><div class="step-t">「Build and deployment」的「Source」選「<strong>Deploy from a branch</strong>」</div></div><div class="step"><div class="step-n">4</div><div class="step-t">Branch 選「<strong>main</strong>」，資料夾維持「/ (root)」，按「<strong>Save</strong>」</div></div><div class="step"><div class="step-n">5</div><div class="step-t">等 1～2 分鐘重新整理，出現的網址（像 https://你的帳號.github.io/專案名稱/）就是正式網址，可以分享給任何人 🎉</div></div><p style="margin-top:10px;font-size:12px;color:var(--ink2)">✏️ 之後要修改內容：請小安改好再推上去，或自己到 GitHub 網頁點開檔案、按右上角鉛筆編輯，改完按「Commit changes」，網址幾分鐘內自動更新。</p></div><div class="card">
 <h3><span class="tag tag-warn">進階（付費，非必要）</span> 把網址換成自己的名字</h3>
 <p style="font-size:13px">不想要網址裡有 github.io 字樣，可以買一個網域（Namecheap、GoDaddy，或台灣的 GANDI、藍新等，一年約 NT$300～1,000），設定 DNS 指向 GitHub，並在 GitHub Settings → Pages 的「Custom domain」欄位貼上網域。生效後記得勾選「Enforce HTTPS」，這一步不能省，沒勾瀏覽器會顯示「不安全」。</p>
-</div><div class="card"><h3><span class="tag tag-sage">交付確認</span> 逐項打勾才算過</h3><div class="check"><i></i><span>已申請 GitHub 帳號</span></div><div class="check"><i></i><span>有一個真正的公開網址（.github.io 或自訂網域皆可）</span></div><div class="check"><i></i><span>檢查過網頁原始碼，沒有出現管理鑰匙</span></div><div class="check"><i></i><span>如果有共用連結／多買家模式，分享的是乾淨版網址</span></div></div>
+</div><div class="card"><h3><span class="tag tag-sage">交付確認</span> 逐項打勾才算過</h3><label class="check"><input type="checkbox"/><i></i><span>已申請 GitHub 帳號</span></label><label class="check"><input type="checkbox"/><i></i><span>有一個真正的公開網址（.github.io 或自訂網域皆可）</span></label><label class="check"><input type="checkbox"/><i></i><span>檢查過網頁原始碼，沒有出現管理鑰匙</span></label><label class="check"><input type="checkbox"/><i></i><span>如果有共用連結／多買家模式，分享的是乾淨版網址</span></label></div>
+<div class="card"><h3><span class="tag tag-sage">回報進度</span> 打勾確認沒問題後</h3><p class="report-note">打勾完成、確認沒問題後請截圖，複製下面這段「任務完成回報」，貼到 LINE 社群「本關卡記事本」下面留言，並附上一張畫面截圖 📸</p><div style="position:relative"><button class="copy-btn" onclick="copyPromptBox(this)">📋 一鍵複製回報格式</button><div class="prompt-box">【任務 07 完成 🪐】
+
+我是＿＿＿＿
+我的產品是＿＿＿＿
+
+今天原本卡在：＿＿＿＿
+
+完成這一關後，我最大的發現是：＿＿＿＿
+
+目前產品理想進度：＿＿％
+
+📸 最後附上一張你的畫面／成果／網址截圖</div></div></div>
 <div class="card" style="background:#E8F0E8;border:1px solid #8FB89A">
 <h3>💬 卡住／有問題在哪留言？（重要！）</h3>
 <p style="margin:0;font-size:13px">看完本頁，想提問請回到安安的 LINE 社群「關卡討論串」裡面留言帶圖發問！</p>
@@ -89,6 +109,44 @@
 </div>
 </div>
 <script>
+
+document.querySelectorAll('.check input[type="checkbox"]').forEach(function(cb, idx){
+  var key = 'chk_' + location.pathname + '_' + idx;
+  try{ if (localStorage.getItem(key) === '1') cb.checked = true; }catch(e){}
+  cb.addEventListener('change', function(){
+    try{ localStorage.setItem(key, cb.checked ? '1' : '0'); }catch(e){}
+  });
+});
+window.copyPromptBox = function(btn){
+  var box = btn.nextElementSibling;
+  var text = box.innerText || box.textContent;
+  function done(){
+    var o = btn.innerHTML;
+    btn.innerHTML = '✅ 已複製！';
+    btn.style.background = '#4F7A5D';
+    setTimeout(function(){ btn.innerHTML = o; btn.style.background = '#C9938A'; }, 2000);
+  }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(done).catch(function(){
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      done();
+    });
+  } else {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    done();
+  }
+};
+
 (function(){
   var PASSWORD = "5888";
   var KEY = "course_unlocked_5888";
